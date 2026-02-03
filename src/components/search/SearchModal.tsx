@@ -156,8 +156,14 @@ export default function SearchModal() {
       />
 
       {/* モーダル */}
-      <div className="relative min-h-full flex items-start justify-center pt-[10vh] px-4">
-        <div className="relative w-full max-w-xl bg-white dark:bg-slate-800 rounded-xl shadow-2xl">
+      <div
+        className="relative min-h-full flex items-start justify-center pt-[10vh] px-4"
+        onClick={closeSearch}
+      >
+        <div
+          className="relative w-full max-w-xl bg-white dark:bg-slate-800 rounded-xl shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
           {/* 検索入力 */}
           <div className="flex items-center gap-3 px-4 border-b border-slate-200 dark:border-slate-700">
             <svg
