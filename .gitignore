@@ -1,0 +1,50 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build
+dist
+dist-ssr
+build
+*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Test
+coverage
+.vitest
+
+# Cache
+.cache
+.turbo
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Vite generated files
+vite.config.d.ts
+vite.config.d.ts.map
+vite.config.js
+
+# Windows artifacts
+nul

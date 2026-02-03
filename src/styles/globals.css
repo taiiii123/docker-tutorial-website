@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタムスクロールバー */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(156, 163, 175, 0.7);
+  }
+}
+
+/* コードブロックのシンタックスハイライト用 */
+@layer base {
+  pre code.hljs {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .dark pre code.hljs {
+    background-color: #1e293b;
+  }
+}
+
+/* プロースのカスタマイズ */
+@layer components {
+  .prose-docker {
+    @apply prose prose-slate dark:prose-invert max-w-none;
+  }
+
+  .prose-docker pre {
+    @apply bg-slate-900 dark:bg-slate-800;
+  }
+
+  .prose-docker code:not(pre code) {
+    @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-normal;
+  }
+
+  .prose-docker code:not(pre code)::before,
+  .prose-docker code:not(pre code)::after {
+    content: none;
+  }
+}
+
+/* アニメーション */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
