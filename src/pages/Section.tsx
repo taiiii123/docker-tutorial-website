@@ -141,7 +141,7 @@ export default function Section() {
     <div className="animate-fade-in">
       {/* ヘッダー */}
       <div className="sticky top-16 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700">
-        <div className="mx-auto max-w-4xl px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-3 py-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* パンくずリスト */}
             <nav className="flex items-center gap-1 sm:gap-2 text-sm text-slate-500 dark:text-slate-400 overflow-x-auto scrollbar-thin">
@@ -251,7 +251,7 @@ export default function Section() {
       </div>
 
       {/* コンテンツ + 目次 */}
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-3 py-6 sm:px-6 lg:px-8">
         <div className="flex gap-8">
           {/* メインコンテンツ */}
           <div className="flex-1 min-w-0 max-w-4xl">
