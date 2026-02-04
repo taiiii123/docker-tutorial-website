@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 横スクロール時の背景色対策 */
+html {
+  background-color: #ffffff;
+}
+
+html.dark {
+  background-color: #0f172a; /* slate-900 */
+}
+
 /* カスタムスクロールバー */
 @layer utilities {
   .scrollbar-thin {
