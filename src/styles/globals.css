@@ -42,20 +42,25 @@
 /* プロースのカスタマイズ */
 @layer components {
   .prose-docker {
-    @apply prose prose-slate dark:prose-invert max-w-none;
+    @apply prose prose-slate dark:prose-invert max-w-none overflow-hidden;
   }
 
   .prose-docker pre {
-    @apply bg-slate-900 dark:bg-slate-800;
+    @apply bg-slate-900 dark:bg-slate-800 overflow-x-auto max-w-full;
   }
 
   .prose-docker code:not(pre code) {
-    @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-normal;
+    @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-normal break-words;
   }
 
   .prose-docker code:not(pre code)::before,
   .prose-docker code:not(pre code)::after {
     content: none;
+  }
+
+  /* テーブルのモバイル対応 */
+  .prose-docker table {
+    @apply block overflow-x-auto max-w-full;
   }
 }
 
