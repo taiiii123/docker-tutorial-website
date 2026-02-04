@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* モバイルでの横はみ出し防止 */
-html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
 /* カスタムスクロールバー */
 @layer utilities {
   .scrollbar-thin {
@@ -48,15 +42,19 @@ html, body {
 /* プロースのカスタマイズ */
 @layer components {
   .prose-docker {
-    @apply prose prose-slate dark:prose-invert max-w-none overflow-hidden;
+    @apply prose prose-slate dark:prose-invert max-w-none;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .prose-docker pre {
-    @apply bg-slate-900 dark:bg-slate-800 overflow-x-auto max-w-full;
+    @apply bg-slate-900 dark:bg-slate-800 overflow-x-auto;
+    max-width: calc(100vw - 2rem);
   }
 
   .prose-docker code:not(pre code) {
-    @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-normal break-words;
+    @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-normal;
+    word-break: break-all;
   }
 
   .prose-docker code:not(pre code)::before,
@@ -66,7 +64,19 @@ html, body {
 
   /* テーブルのモバイル対応 */
   .prose-docker table {
-    @apply block overflow-x-auto max-w-full;
+    @apply block overflow-x-auto;
+    max-width: calc(100vw - 2rem);
+  }
+
+  /* 画像のモバイル対応 */
+  .prose-docker img {
+    @apply max-w-full h-auto;
+  }
+
+  /* ASCII art/ダイアグラムのモバイル対応 */
+  .prose-docker pre:has(code:not([class*="language-"])) {
+    @apply text-xs;
+    max-width: calc(100vw - 2rem);
   }
 }
 

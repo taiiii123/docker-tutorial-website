@@ -12,7 +12,7 @@ export default function MainLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-slate-900">
       {/* ヘッダー */}
       <Header onMenuClick={() => setSidebarOpen(true)} />
 
