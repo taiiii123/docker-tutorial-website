@@ -144,12 +144,15 @@ export default function Section() {
         <div className="mx-auto max-w-4xl px-4 py-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* パンくずリスト */}
-            <nav className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-              <Link to="/" className="hover:text-docker-blue transition-colors">
+            <nav className="flex items-center gap-1 sm:gap-2 text-sm text-slate-500 dark:text-slate-400 overflow-x-auto scrollbar-thin">
+              <Link
+                to="/"
+                className="flex-shrink-0 py-1 px-1 hover:text-docker-blue active:text-docker-blue transition-colors touch-manipulation"
+              >
                 ホーム
               </Link>
               <svg
-                className="h-4 w-4"
+                className="h-4 w-4 flex-shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -163,12 +166,13 @@ export default function Section() {
               </svg>
               <Link
                 to={`/chapter/${chapter.id}`}
-                className="hover:text-docker-blue transition-colors"
+                className="flex-shrink-0 py-1 px-1 hover:text-docker-blue active:text-docker-blue transition-colors touch-manipulation"
               >
-                Chapter {chapter.number}
+                <span className="hidden sm:inline">Chapter {chapter.number}</span>
+                <span className="sm:hidden">Ch.{chapter.number}</span>
               </Link>
               <svg
-                className="h-4 w-4"
+                className="h-4 w-4 flex-shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -180,26 +184,27 @@ export default function Section() {
                   d="M8.25 4.5l7.5 7.5-7.5 7.5"
                 />
               </svg>
-              <span className="text-slate-900 dark:text-white truncate max-w-[150px] sm:max-w-none">
+              <span className="text-slate-900 dark:text-white truncate max-w-[100px] sm:max-w-[200px] md:max-w-none">
                 {section.title}
               </span>
             </nav>
 
             {/* アクションボタン */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2">
               {/* ブックマークボタン */}
               <button
                 onClick={handleToggleBookmark}
                 className={clsx(
-                  'flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors',
+                  'flex items-center justify-center gap-1.5 rounded-lg px-2 sm:px-3 min-h-[44px] text-sm font-medium transition-colors touch-manipulation active:scale-95',
                   bookmarked
-                    ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:hover:bg-yellow-900/50'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700'
+                    ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-400 dark:hover:bg-yellow-900/50 active:bg-yellow-300'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 active:bg-slate-300'
                 )}
                 title={bookmarked ? 'ブックマークを解除' : 'ブックマークに追加'}
+                aria-label={bookmarked ? 'ブックマークを解除' : 'ブックマークに追加'}
               >
                 <svg
-                  className="h-4 w-4"
+                  className="h-5 w-5 sm:h-4 sm:w-4"
                   fill={bookmarked ? 'currentColor' : 'none'}
                   viewBox="0 0 24 24"
                   strokeWidth={2}
@@ -218,47 +223,27 @@ export default function Section() {
               <button
                 onClick={handleToggleComplete}
                 className={clsx(
-                  'flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors',
+                  'flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg px-2 sm:px-3 min-h-[44px] text-sm font-medium transition-colors touch-manipulation active:scale-95',
                   completed
-                    ? 'bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400 dark:hover:bg-green-900/50'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700'
+                    ? 'bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-900/30 dark:text-green-400 dark:hover:bg-green-900/50 active:bg-green-300'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 active:bg-slate-300'
                 )}
+                aria-label={completed ? '完了を取り消す' : '完了にする'}
               >
-                {completed ? (
-                  <>
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    完了
-                  </>
-                ) : (
-                  <>
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    完了にする
-                  </>
-                )}
+                <svg
+                  className="h-5 w-5 sm:h-4 sm:w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span className="hidden sm:inline">{completed ? '完了' : '完了にする'}</span>
               </button>
             </div>
           </div>
@@ -365,73 +350,73 @@ export default function Section() {
             )}
 
             {/* ナビゲーション */}
-            <nav className="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-700 pt-8">
-          {prevSection ? (
-            <Link
-              to={`/chapter/${prevSection.chapterId}/${prevSection.sectionId}`}
-              className="group flex items-center gap-2 text-slate-600 hover:text-docker-blue dark:text-slate-400 dark:hover:text-docker-blue transition-colors"
-            >
-              <svg
-                className="h-5 w-5 transition-transform group-hover:-translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-                />
-              </svg>
-              <span className="text-sm">前のセクション</span>
-            </Link>
-          ) : (
-            <div />
-          )}
+            <nav className="mt-12 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-t border-slate-200 dark:border-slate-700 pt-8">
+              {prevSection ? (
+                <Link
+                  to={`/chapter/${prevSection.chapterId}/${prevSection.sectionId}`}
+                  className="group flex items-center justify-center sm:justify-start gap-2 min-h-[44px] px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 hover:text-docker-blue hover:bg-slate-200 dark:text-slate-400 dark:hover:text-docker-blue dark:hover:bg-slate-700 active:bg-slate-300 dark:active:bg-slate-600 transition-colors touch-manipulation"
+                >
+                  <svg
+                    className="h-5 w-5 transition-transform group-hover:-translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                    />
+                  </svg>
+                  <span className="text-sm font-medium">前のセクション</span>
+                </Link>
+              ) : (
+                <div className="hidden sm:block" />
+              )}
 
-          {nextSection ? (
-            <Link
-              to={`/chapter/${nextSection.chapterId}/${nextSection.sectionId}`}
-              className="group flex items-center gap-2 text-slate-600 hover:text-docker-blue dark:text-slate-400 dark:hover:text-docker-blue transition-colors"
-            >
-              <span className="text-sm">次のセクション</span>
-              <svg
-                className="h-5 w-5 transition-transform group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </Link>
-          ) : (
-            <Link
-              to={`/chapter/${chapter.id}`}
-              className="group flex items-center gap-2 text-slate-600 hover:text-docker-blue dark:text-slate-400 dark:hover:text-docker-blue transition-colors"
-            >
-              <span className="text-sm">チャプター完了</span>
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </Link>
-            )}
-          </nav>
+              {nextSection ? (
+                <Link
+                  to={`/chapter/${nextSection.chapterId}/${nextSection.sectionId}`}
+                  className="group flex items-center justify-center sm:justify-end gap-2 min-h-[44px] px-4 py-2 rounded-lg bg-docker-blue text-white hover:bg-blue-600 active:bg-blue-700 transition-colors touch-manipulation"
+                >
+                  <span className="text-sm font-medium">次のセクション</span>
+                  <svg
+                    className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </Link>
+              ) : (
+                <Link
+                  to={`/chapter/${chapter.id}`}
+                  className="group flex items-center justify-center sm:justify-end gap-2 min-h-[44px] px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 active:bg-green-800 transition-colors touch-manipulation"
+                >
+                  <span className="text-sm font-medium">チャプター完了</span>
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </Link>
+              )}
+            </nav>
           </div>
 
           {/* 目次サイドバー */}

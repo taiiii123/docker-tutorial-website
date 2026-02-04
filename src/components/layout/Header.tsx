@@ -119,11 +119,11 @@ export default function Header({ onMenuClick }: HeaderProps) {
           </Link>
         </div>
 
-        {/* 中央: 検索ボタン */}
+        {/* 中央: 検索ボタン（デスクトップ） */}
         <div className="hidden md:flex flex-1 max-w-md mx-4">
           <button
             onClick={openSearch}
-            className="w-full h-10 pl-10 pr-4 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-transparent hover:border-slate-300 dark:hover:border-slate-600 transition-colors text-left relative"
+            className="w-full h-10 pl-10 pr-4 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-transparent hover:border-slate-300 dark:hover:border-slate-600 transition-colors text-left relative touch-manipulation"
           >
             <svg
               className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400"
@@ -146,12 +146,35 @@ export default function Header({ onMenuClick }: HeaderProps) {
         </div>
 
         {/* 右側: アクション */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
+          {/* モバイル検索ボタン */}
+          <button
+            onClick={openSearch}
+            className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 active:text-docker-blue transition-colors touch-manipulation"
+            title="検索"
+            aria-label="検索を開く"
+          >
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          </button>
+
           {/* 進捗ダッシュボード */}
           <Link
             to="/dashboard"
-            className="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+            className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 active:text-docker-blue transition-colors touch-manipulation"
             title="学習進捗"
+            aria-label="学習進捗を表示"
           >
             <svg
               className="h-5 w-5"
@@ -171,18 +194,19 @@ export default function Header({ onMenuClick }: HeaderProps) {
           {/* テーマ切り替え */}
           <button
             onClick={handleThemeChange}
-            className="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+            className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 active:text-docker-blue transition-colors touch-manipulation"
             title={`テーマ: ${theme}`}
+            aria-label={`テーマを変更（現在: ${theme}）`}
           >
             {getThemeIcon()}
           </button>
 
-          {/* GitHub リンク */}
+          {/* GitHub リンク（モバイルでは非表示） */}
           <a
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+            className="hidden sm:flex p-2 min-w-[44px] min-h-[44px] items-center justify-center text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors touch-manipulation"
             title="GitHub"
           >
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

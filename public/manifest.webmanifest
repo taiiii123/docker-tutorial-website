@@ -1,0 +1,23 @@
+{
+  "name": "Docker学習サイト",
+  "short_name": "Docker学習",
+  "description": "Dockerの基礎から応用まで学べる包括的な日本語学習教材サイト",
+  "theme_color": "#0db7ed",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
