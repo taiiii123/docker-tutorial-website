@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="github-actions" name="GitHub Actions 構造">
+    <mxGraphModel dx="900" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="600" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="GitHub Actions 構造（階層関係）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="260" y="15" width="340" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Workflow 外枠 (blue) -->
+        <mxCell id="workflow-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="780" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="workflow-label" value="Workflow" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="75" y="68" width="90" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="workflow-path" value=".github/workflows/*.yml" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#6c8ebf;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="170" y="73" width="190" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="workflow-desc" value="CI/CD パイプライン全体の定義ファイル。トリガー（on）とジョブを記述する。" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="75" y="95" width="500" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Job 1 (green) -->
+        <mxCell id="job1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="130" width="340" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="job1-label" value="Job: build" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="115" y="138" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="job1-desc" value="並列実行可能な処理単位&#xa;（独立した仮想マシン上で実行）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="115" y="163" width="210" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Step 1 (orange) -->
+        <mxCell id="step1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="125" y="205" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="step1-label" value="Step 1: チェックアウト" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="140" y="213" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="step1-desc" value="順次実行されるタスク" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="140" y="235" width="150" height="18" as="geometry" />
+        </mxCell>
+        <!-- Action inside step 1 (gray) -->
+        <mxCell id="action1" value="Action: actions/checkout@v4&#xa;（再利用可能な処理）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;fontSize=11;fontStyle=0;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="145" y="260" width="250" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2 (orange) -->
+        <mxCell id="step2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="125" y="320" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="step2-label" value="Step 2: セットアップ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="140" y="328" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="action2" value="Action: actions/setup-node@v4&#xa;（再利用可能な処理）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;fontSize=11;fontStyle=0;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="145" y="370" width="250" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3 (orange) -->
+        <mxCell id="step3-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="125" y="435" width="290" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="step3-label" value="Step 3: ビルド実行" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="140" y="443" width="160" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="action3" value="run: npm run build&#xa;（シェルコマンド実行）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;fontSize=11;fontStyle=0;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="145" y="480" width="250" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 順次実行の矢印（Step間） -->
+        <mxCell id="step-arrow1" value="↓" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="305" width="20" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="step-arrow2" value="↓" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="420" width="20" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Job 2 (green) -->
+        <mxCell id="job2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="480" y="130" width="340" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="job2-label" value="Job: test" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="495" y="138" width="90" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="job2-desc" value="needs: build で依存指定可能&#xa;（別の仮想マシン上で実行）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="495" y="163" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Step 4 (orange) -->
+        <mxCell id="step4-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="505" y="205" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="step4-label" value="Step 1: チェックアウト" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="520" y="213" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="action4" value="Action: actions/checkout@v4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;fontSize=11;fontStyle=0;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="525" y="260" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Step 5 (orange) -->
+        <mxCell id="step5-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="505" y="320" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="step5-label" value="Step 2: テスト実行" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="520" y="328" width="160" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="action5" value="run: npm test" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;fontSize=11;fontStyle=0;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="525" y="370" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 並列実行ラベル -->
+        <mxCell id="parallel-label" value="⇔ 並列実行可能" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="340" width="60" height="22" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

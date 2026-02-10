@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="k8s-cluster-overview" name="Kubernetes クラスター概要">
+    <mxGraphModel dx="1100" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Kubernetes クラスター概要" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="370" y="15" width="280" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Kubernetes クラスター外枠 -->
+        <mxCell id="cluster" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="960" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="cluster-label" value="Kubernetes クラスター" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Control Plane ラベル -->
+        <mxCell id="cp-label" value="Control Plane（マスター）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=2;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="400" y="95" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cp-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="120" width="520" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cp-items" value="API Server　|　etcd　|　Scheduler　|　Controller Manager" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="310" y="132" width="400" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Control Plane → Nodes -->
+        <mxCell id="cp-arrow" value="管理" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;fontSize=11;fontColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="175" as="sourcePoint" />
+            <mxPoint x="510" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Node 1 -->
+        <mxCell id="node1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="220" width="270" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="node1-label" value="Node 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="190" y="228" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="node1-kubelet" value="kubelet / kube-proxy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontStyle=2;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="165" y="255" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Node 1: Pod A-1 -->
+        <mxCell id="pod-a1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="125" y="285" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-a1-label" value="Pod A-1" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="195" y="290" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-a1-container" value="コンテナ A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="165" y="320" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Node 1: Pod B-1 -->
+        <mxCell id="pod-b1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="125" y="385" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-b1-label" value="Pod B-1" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="195" y="390" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-b1-container" value="コンテナ B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6b656;strokeColor=#d6b656;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="165" y="420" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Node 2 -->
+        <mxCell id="node2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="400" y="220" width="270" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="node2-label" value="Node 2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="490" y="228" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="node2-kubelet" value="kubelet / kube-proxy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontStyle=2;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="465" y="255" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Node 2: Pod A-2 -->
+        <mxCell id="pod-a2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="425" y="285" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-a2-label" value="Pod A-2" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="495" y="290" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-a2-container" value="コンテナ A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="465" y="320" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Node 2: Pod B-2 -->
+        <mxCell id="pod-b2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="425" y="385" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-b2-label" value="Pod B-2" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="495" y="390" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-b2-container" value="コンテナ B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d6b656;strokeColor=#d6b656;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="465" y="420" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Node 3 -->
+        <mxCell id="node3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="220" width="270" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="node3-label" value="Node 3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="790" y="228" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="node3-kubelet" value="kubelet / kube-proxy" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontStyle=2;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="765" y="255" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Node 3: Pod A-3 -->
+        <mxCell id="pod-a3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="725" y="285" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-a3-label" value="Pod A-3" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="795" y="290" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-a3-container" value="コンテナ A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="765" y="320" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 機能ラベル（下部） -->
+        <mxCell id="features-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#82b366;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="520" width="870" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="features" value="自動復旧　|　負荷分散　|　ローリングアップデート　|　自動スケール" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="260" y="527" width="510" height="25" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

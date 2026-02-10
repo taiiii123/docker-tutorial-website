@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="compose-microservices-gateway" name="マイクロサービス Gateway 構成">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="マイクロサービス: API Gateway 構成" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="370" y="15" width="310" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Gateway (Nginx) -->
+        <mxCell id="gw-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="410" y="60" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-icon" value="🌐" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="500" y="62" width="45" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-title" value="Gateway (Nginx)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="460" y="100" width="130" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="gw-desc" value="API ルーティング / ロードバランサー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="430" y="125" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Gateway → user-service -->
+        <mxCell id="arrow-gw-user" value="/api/users" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;fontSize=10;fontColor=#2496ED;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="165" as="sourcePoint" />
+            <mxPoint x="200" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: Gateway → product-service -->
+        <mxCell id="arrow-gw-product" value="/api/products" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;fontSize=10;fontColor=#2496ED;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="525" y="165" as="sourcePoint" />
+            <mxPoint x="525" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: Gateway → order-service -->
+        <mxCell id="arrow-gw-order" value="/api/orders" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;fontSize=10;fontColor=#2496ED;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="165" as="sourcePoint" />
+            <mxPoint x="850" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- user-service -->
+        <mxCell id="us-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="245" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="us-icon" value="👤" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry x="157" y="248" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="us-title" value="user-service" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="130" y="285" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="us-port" value=":3001" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="310" width="45" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- product-service -->
+        <mxCell id="ps-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="410" y="245" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ps-icon" value="📦" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry x="497" y="248" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="ps-title" value="product-service" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="462" y="285" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ps-port" value=":3002" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="497" y="310" width="45" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- order-service -->
+        <mxCell id="os-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="750" y="245" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="os-icon" value="🛒" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry x="837" y="248" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="os-title" value="order-service" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="808" y="285" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="os-port" value=":3003" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="837" y="310" width="45" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: user-service → user-db -->
+        <mxCell id="arrow-us-db" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="350" as="sourcePoint" />
+            <mxPoint x="180" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: product-service → product-db -->
+        <mxCell id="arrow-ps-db" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="350" as="sourcePoint" />
+            <mxPoint x="520" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: order-service → order-db -->
+        <mxCell id="arrow-os-db" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="350" as="sourcePoint" />
+            <mxPoint x="860" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- user-db -->
+        <mxCell id="udb-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="90" y="425" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="udb-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="157" y="428" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="udb-title" value="user-db (Postgres)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="107" y="465" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="udb-port" value=":5432" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="487" width="45" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- product-db -->
+        <mxCell id="pdb-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="430" y="425" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pdb-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="497" y="428" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="pdb-title" value="product-db (Postgres)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="442" y="465" width="155" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="pdb-port" value=":5432" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="497" y="487" width="45" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- order-db -->
+        <mxCell id="odb-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="770" y="425" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="odb-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="837" y="428" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="odb-title" value="order-db (Postgres)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="790" y="465" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="odb-port" value=":5432" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="837" y="487" width="45" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 共有キャッシュ (Redis) -->
+        <mxCell id="cache-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="380" y="580" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-icon" value="⚡" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry x="497" y="582" width="40" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-title" value="共有キャッシュ (Redis)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="435" y="618" width="170" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-port" value=":6379" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="497" y="643" width="45" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: 各サービス → Redis -->
+        <mxCell id="arrow-us-cache" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#666666;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="350" as="sourcePoint" />
+            <mxPoint x="420" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-ps-cache" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#666666;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="350" as="sourcePoint" />
+            <mxPoint x="520" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-os-cache" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#666666;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="350" as="sourcePoint" />
+            <mxPoint x="620" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- キャッシュ接続ラベル -->
+        <mxCell id="cache-label" value="キャッシュ接続（共有）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="435" y="555" width="140" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

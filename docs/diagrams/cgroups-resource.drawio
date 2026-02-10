@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Claude" version="24.0.0" type="device">
+  <diagram id="cgroups-resource" name="Page-1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="cgroups によるリソース制限" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="334" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== ホストマシン ===== -->
+        <mxCell id="host" value="ホストマシン" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=16;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=4;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="84" y="60" width="1000" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- ホストリソース情報 -->
+        <mxCell id="host-resources" value="ホストの物理リソース: CPU 100% / メモリ 4GB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=13;fontStyle=1;verticalAlign=middle;shadow=0;" vertex="1" parent="host">
+          <mxGeometry x="200" y="50" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- CPU リソースバー（全体） -->
+        <mxCell id="cpu-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#999999;" vertex="1" parent="host">
+          <mxGeometry x="100" y="120" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cpu-bar-a" value="Container A: 50%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="host">
+          <mxGeometry x="100" y="120" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cpu-bar-b" value="Container B: 25%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="host">
+          <mxGeometry x="500" y="120" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cpu-bar-c" value="Container C: 25%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="host">
+          <mxGeometry x="700" y="120" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cpu-label" value="CPU 割り当て" style="text;html=1;fontSize=12;fontStyle=1;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#666666;" vertex="1" parent="host">
+          <mxGeometry x="-10" y="120" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- メモリリソースバー（全体） -->
+        <mxCell id="mem-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#999999;" vertex="1" parent="host">
+          <mxGeometry x="100" y="170" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mem-bar-a" value="512MB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="host">
+          <mxGeometry x="100" y="170" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mem-bar-b" value="256MB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="host">
+          <mxGeometry x="500" y="170" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mem-bar-c" value="256MB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="host">
+          <mxGeometry x="700" y="170" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mem-label" value="メモリ割り当て" style="text;html=1;fontSize=12;fontStyle=1;align=right;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#666666;" vertex="1" parent="host">
+          <mxGeometry x="-10" y="170" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- cgroups ラベル -->
+        <mxCell id="cgroups-label" value="⬆ cgroups がリソースの上限を制御 ⬆" style="text;html=1;fontSize=13;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#FF6600;" vertex="1" parent="host">
+          <mxGeometry x="250" y="220" width="500" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 区切り線 -->
+        <mxCell id="separator" value="" style="line;strokeWidth=2;html=1;strokeColor=#CCCCCC;" vertex="1" parent="host">
+          <mxGeometry x="50" y="260" width="900" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Container A ===== -->
+        <mxCell id="container-a" value="" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;shadow=1;" vertex="1" parent="host">
+          <mxGeometry x="50" y="290" width="270" height="370" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ca-title" value="Container A" style="text;html=1;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="15" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ca-app" value="Web アプリケーション&#xa;(Node.js)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=12;fontStyle=0;verticalAlign=middle;shadow=0;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="70" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- CPU ゲージ A -->
+        <mxCell id="ca-cpu-label" value="CPU 上限" style="text;html=1;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="140" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-cpu-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#CCCCCC;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="165" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-cpu-bar" value="50%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#4472C4;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="165" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- メモリゲージ A -->
+        <mxCell id="ca-mem-label" value="メモリ上限" style="text;html=1;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="210" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-mem-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#CCCCCC;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="235" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-mem-bar" value="512MB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#4472C4;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="235" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker コマンド A -->
+        <mxCell id="ca-cmd" value="--cpus=0.5&#xa;--memory=512m" style="text;html=1;fontSize=11;fontStyle=0;align=center;verticalAlign=middle;fillColor=#f0f7ff;strokeColor=#6c8ebf;rounded=1;fontFamily=Courier New;" vertex="1" parent="container-a">
+          <mxGeometry x="35" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Container B ===== -->
+        <mxCell id="container-b" value="" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;shadow=1;" vertex="1" parent="host">
+          <mxGeometry x="365" y="290" width="270" height="370" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cb-title" value="Container B" style="text;html=1;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;fillColor=#82b366;strokeColor=#82b366;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="15" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cb-app" value="API サーバー&#xa;(Python)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=12;fontStyle=0;verticalAlign=middle;shadow=0;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="70" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- CPU ゲージ B -->
+        <mxCell id="cb-cpu-label" value="CPU 上限" style="text;html=1;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="140" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-cpu-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#CCCCCC;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="165" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-cpu-bar" value="25%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#548235;strokeColor=#548235;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="165" width="50" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- メモリゲージ B -->
+        <mxCell id="cb-mem-label" value="メモリ上限" style="text;html=1;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="210" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-mem-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#CCCCCC;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="235" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-mem-bar" value="256MB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#548235;strokeColor=#548235;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="235" width="50" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker コマンド B -->
+        <mxCell id="cb-cmd" value="--cpus=0.25&#xa;--memory=256m" style="text;html=1;fontSize=11;fontStyle=0;align=center;verticalAlign=middle;fillColor=#f0fff0;strokeColor=#82b366;rounded=1;fontFamily=Courier New;" vertex="1" parent="container-b">
+          <mxGeometry x="35" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Container C ===== -->
+        <mxCell id="container-c" value="" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;shadow=1;" vertex="1" parent="host">
+          <mxGeometry x="680" y="290" width="270" height="370" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cc-title" value="Container C" style="text;html=1;fontSize=16;fontStyle=1;align=center;verticalAlign=middle;fillColor=#d6b656;strokeColor=#d6b656;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="15" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cc-app" value="バッチ処理&#xa;(Go)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=12;fontStyle=0;verticalAlign=middle;shadow=0;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="70" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- CPU ゲージ C -->
+        <mxCell id="cc-cpu-label" value="CPU 上限" style="text;html=1;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="140" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cc-cpu-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#CCCCCC;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="165" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cc-cpu-bar" value="25%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BF8F00;strokeColor=#BF8F00;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="165" width="50" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- メモリゲージ C -->
+        <mxCell id="cc-mem-label" value="メモリ上限" style="text;html=1;fontSize=12;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="210" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cc-mem-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=#CCCCCC;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="235" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cc-mem-bar" value="256MB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BF8F00;strokeColor=#BF8F00;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="235" width="50" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker コマンド C -->
+        <mxCell id="cc-cmd" value="--cpus=0.25&#xa;--memory=256m" style="text;html=1;fontSize=11;fontStyle=0;align=center;verticalAlign=middle;fillColor=#fff8f0;strokeColor=#d6b656;rounded=1;fontFamily=Courier New;" vertex="1" parent="container-c">
+          <mxGeometry x="35" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 下部の説明 -->
+        <mxCell id="explanation" value="cgroups（Control Groups）は Linux カーネルの機能で、各コンテナが使用できる CPU・メモリなどのリソースに上限を設定する。&#xa;これにより、1つのコンテナがホストのリソースを独占することを防ぎ、安定した運用を実現する。" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;align=left;verticalAlign=middle;spacingLeft=15;spacingRight=15;arcSize=8;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="134" y="780" width="900" height="50" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

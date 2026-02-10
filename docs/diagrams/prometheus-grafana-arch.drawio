@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="prom-grafana" name="Prometheus + Grafana 監視アーキテクチャ">
+    <mxGraphModel dx="900" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="680" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Prometheus + Grafana 監視アーキテクチャ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="230" y="15" width="440" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ群（トップ行） -->
+        <mxCell id="container1" value="コンテナ A&#xa;（メトリクス）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="70" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="container2" value="コンテナ B&#xa;（メトリクス）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="70" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="container3" value="コンテナ C&#xa;（メトリクス）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="70" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: コンテナ → cAdvisor -->
+        <mxCell id="arrow-c1" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="130" as="sourcePoint" />
+            <mxPoint x="400" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-c2" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="445" y="130" as="sourcePoint" />
+            <mxPoint x="445" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-c3" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="675" y="130" as="sourcePoint" />
+            <mxPoint x="490" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メトリクスラベル -->
+        <mxCell id="metrics-label" value="CPU / メモリ / ネットワーク / ディスク I/O" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="280" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- cAdvisor -->
+        <mxCell id="cadvisor" value="cAdvisor&#xa;（コンテナメトリクス収集）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="200" width="270" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- node-exporter 補足 -->
+        <mxCell id="node-exporter" value="Node Exporter&#xa;（ホストメトリクス）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=11;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="200" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-node-exp" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#82b366;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="250" as="sourcePoint" />
+            <mxPoint x="530" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: cAdvisor → Prometheus -->
+        <mxCell id="arrow-cadvisor-prom" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="445" y="260" as="sourcePoint" />
+            <mxPoint x="445" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-scrape" value="スクレイピング&#xa;（Pull型）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="270" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Prometheus -->
+        <mxCell id="prometheus" value="Prometheus&#xa;（時系列データベース / メトリクス保存・クエリ）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="310" width="410" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Alertmanager -->
+        <mxCell id="alertmanager" value="Alertmanager&#xa;（アラート通知）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=1;fontSize=11;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="320" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-alert" value="アラート" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#d6b656;endFill=1;fontSize=10;fontColor=#d6b656;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="345" as="sourcePoint" />
+            <mxPoint x="210" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: Prometheus → Grafana -->
+        <mxCell id="arrow-prom-grafana" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="445" y="380" as="sourcePoint" />
+            <mxPoint x="445" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-query" value="PromQL クエリ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="400" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Grafana -->
+        <mxCell id="grafana" value="Grafana&#xa;（ダッシュボード / 可視化）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="440" width="350" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ダッシュボード例 -->
+        <mxCell id="dashboard-items" value="グラフ / テーブル / アラート / ヒートマップ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="520" width="280" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ユーザーアイコン -->
+        <mxCell id="user" value="運用担当者&#xa;（ブラウザ）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="560" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-user" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#333333;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="445" y="540" as="sourcePoint" />
+            <mxPoint x="445" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -14,21 +14,7 @@ docker run hello-world
 
 このコマンドを実行すると、以下の処理が行われます：
 
-```
-1. ローカルに hello-world イメージがあるか確認
-          │
-          ▼ (ない場合)
-2. Docker Hub から hello-world イメージをダウンロード
-          │
-          ▼
-3. イメージからコンテナを作成
-          │
-          ▼
-4. コンテナ内のプログラムを実行
-          │
-          ▼
-5. 実行完了後、コンテナは停止
-```
+![docker run hello-world の実行フロー](/images/diagrams/hello-world-flow.png)
 
 **出力例:**
 

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="compose-startup-order" name="Docker Compose 起動順序">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="700" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker Compose 起動順序 (depends_on)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="250" y="15" width="370" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ステップ 1 -->
+        <mxCell id="step1-label" value="ステップ 1: 並列起動" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="65" width="165" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="step1-desc" value="依存関係のないサービスが同時に起動" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="240" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 並列マーク -->
+        <mxCell id="parallel-mark" value="並列" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="790" y="130" width="50" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- db コンテナ -->
+        <mxCell id="db-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="120" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="db-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="225" y="122" width="45" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="db-title" value="db (MySQL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="160" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="db-port" value=":3306" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="185" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- cache コンテナ -->
+        <mxCell id="cache-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="480" y="120" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-icon" value="⚡" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="605" y="122" width="45" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-title" value="cache (Redis)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="575" y="160" width="105" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-port" value=":6379" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="185" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Step1 → Step2 (db) -->
+        <mxCell id="arrow-db-app" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="225" as="sourcePoint" />
+            <mxPoint x="380" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: Step1 → Step2 (cache) -->
+        <mxCell id="arrow-cache-app" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="225" as="sourcePoint" />
+            <mxPoint x="500" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- depends_on ラベル (左) -->
+        <mxCell id="depends-label-1" value="depends_on" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#333333;fontFamily=monospace;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="250" y="265" width="90" height="20" as="geometry" />
+        </mxCell>
+        <!-- depends_on ラベル (右) -->
+        <mxCell id="depends-label-2" value="depends_on" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#333333;fontFamily=monospace;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="540" y="265" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ステップ 2 -->
+        <mxCell id="step2-label" value="ステップ 2: db と cache 起動後" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="295" width="255" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 順次マーク -->
+        <mxCell id="sequential-mark" value="順次" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="790" y="340" width="50" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- app コンテナ -->
+        <mxCell id="app-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="270" y="325" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="app-icon" value="⚙" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="415" y="328" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="app-title" value="app (Node.js)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="385" y="370" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="app-port" value=":3000" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="395" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Step2 → Step3 -->
+        <mxCell id="arrow-app-web" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="430" as="sourcePoint" />
+            <mxPoint x="440" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="depends-label-3" value="depends_on" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#333333;fontFamily=monospace;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="465" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ステップ 3 -->
+        <mxCell id="step3-label" value="ステップ 3: app 起動後" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="490" width="190" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 順次マーク -->
+        <mxCell id="sequential-mark-2" value="順次" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="790" y="535" width="50" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- web コンテナ -->
+        <mxCell id="web-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="270" y="515" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="web-icon" value="🌐" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="415" y="518" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="web-title" value="web (Nginx)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="392" y="560" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="web-port" value=":80" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="585" width="35" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 注意書き -->
+        <mxCell id="note-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="640" width="780" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="note-text" value="⚠ depends_on はコンテナの起動順序のみを制御します。サービスの準備完了（healthy）を待つには condition: service_healthy を使用してください。" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="70" y="650" width="760" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

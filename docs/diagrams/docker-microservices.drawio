@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="microservices" name="Microservices">
+    <mxGraphModel dx="800" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="350" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="マイクロサービスアーキテクチャ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="230" y="15" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Web Container -->
+        <mxCell id="web-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="web-icon" value="🌐" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="120" y="80" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="web-title" value="Web" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="120" y="125" width="50" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="web-subtitle" value="Container" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="110" y="145" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="web-detail" value="Nginx / React" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="105" y="170" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="web-port" value=":80" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="195" width="40" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 Web → API -->
+        <mxCell id="arrow1" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="245" y="150" as="sourcePoint" />
+            <mxPoint x="295" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- API Container -->
+        <mxCell id="api-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="70" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="api-icon" value="⚙" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="365" y="80" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api-title" value="API" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="365" y="125" width="40" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="api-subtitle" value="Container" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="350" y="145" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="api-detail" value="Node.js / Express" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="340" y="170" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="api-port" value=":3000" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="195" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 API → DB -->
+        <mxCell id="arrow2" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="150" as="sourcePoint" />
+            <mxPoint x="535" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- DB Container -->
+        <mxCell id="db-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="70" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="db-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="605" y="80" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="db-title" value="DB" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="608" y="125" width="35" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="db-subtitle" value="Container" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="595" y="145" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="db-detail" value="PostgreSQL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="595" y="170" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="db-port" value=":5432" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="195" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Network -->
+        <mxCell id="network" value="Docker Network" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2496ED;strokeWidth=2;dashed=1;dashPattern=8 4;fontSize=12;fontStyle=1;fontColor=#2496ED;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="700" height="200" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

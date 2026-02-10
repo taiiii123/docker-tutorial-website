@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="mount-types-comparison" name="マウントタイプ比較">
+    <mxGraphModel dx="1100" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="3つのマウントタイプ比較" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="370" y="20" width="360" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Container -->
+        <mxCell id="container" value="Container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=16;fontStyle=1;fontColor=#333333;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="310" y="75" width="480" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 3つのマウントポイント -->
+        <mxCell id="mp1" value="/data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="335" y="105" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="mp2" value="/app" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=11;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="105" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="mp3" value="/tmp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=1;fontSize=11;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="665" y="105" width="100" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Container → Volume Mount -->
+        <mxCell id="arrow-vol" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=2;fillColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="145" as="sourcePoint" />
+            <mxPoint x="220" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: Container → Bind Mount -->
+        <mxCell id="arrow-bind" value="" style="endArrow=block;html=1;strokeColor=#82b366;strokeWidth=2;fillColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="145" as="sourcePoint" />
+            <mxPoint x="550" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: Container → tmpfs Mount -->
+        <mxCell id="arrow-tmpfs" value="" style="endArrow=block;html=1;strokeColor=#d6b656;strokeWidth=2;fillColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="715" y="145" as="sourcePoint" />
+            <mxPoint x="880" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Column 1: Volume Mount ===== -->
+        <mxCell id="col1-title" value="Volume Mount" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#333333;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Volume ストレージ -->
+        <mxCell id="col1-storage" value="Docker Volume&#xa;/var/lib/docker/volumes/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="310" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Volume 特性 -->
+        <mxCell id="col1-prop1" value="永続化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="110" y="395" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="col1-prop2" value="Docker管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="225" y="395" width="105" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Volume 説明 -->
+        <mxCell id="col1-desc" value="Dockerが完全に管理&#xa;本番環境に推奨" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#6c8ebf;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="140" y="445" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: col1-title → col1-storage -->
+        <mxCell id="arrow-col1" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=1;fillColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="280" as="sourcePoint" />
+            <mxPoint x="220" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Column 2: Bind Mount ===== -->
+        <mxCell id="col2-title" value="Bind Mount" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#333333;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="410" y="230" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Bind ストレージ -->
+        <mxCell id="col2-storage" value="Host Directory&#xa;/home/user/app/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="430" y="310" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Bind 特性 -->
+        <mxCell id="col2-prop1" value="永続化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="395" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="col2-prop2" value="ユーザー管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="555" y="395" width="105" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Bind 説明 -->
+        <mxCell id="col2-desc" value="ホストのディレクトリを直接マウント&#xa;開発環境に便利" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="445" y="445" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: col2-title → col2-storage -->
+        <mxCell id="arrow-col2" value="" style="endArrow=block;html=1;strokeColor=#82b366;strokeWidth=1;fillColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="280" as="sourcePoint" />
+            <mxPoint x="550" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Column 3: tmpfs Mount ===== -->
+        <mxCell id="col3-title" value="tmpfs Mount" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#333333;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="740" y="230" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- tmpfs ストレージ -->
+        <mxCell id="col3-storage" value="Memory（RAM）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=1;fontSize=12;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="760" y="310" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- tmpfs 特性 -->
+        <mxCell id="col3-prop1" value="一時的" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="770" y="395" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="col3-prop2" value="メモリ上" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="885" y="395" width="105" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- tmpfs 説明 -->
+        <mxCell id="col3-desc" value="メモリ上にのみ存在&#xa;コンテナ停止で消失" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="795" y="445" width="170" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: col3-title → col3-storage -->
+        <mxCell id="arrow-col3" value="" style="endArrow=block;html=1;strokeColor=#d6b656;strokeWidth=1;fillColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="280" as="sourcePoint" />
+            <mxPoint x="880" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

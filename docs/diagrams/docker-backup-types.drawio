@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="backup-types" name="Docker環境のデータ種類">
+    <mxGraphModel dx="900" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="580" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker環境のデータ種類" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="15" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Docker環境 外枠 -->
+        <mxCell id="env-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="780" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="env-label" value="Docker 環境" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="75" y="70" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 1. イメージ -->
+        <mxCell id="image-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="110" width="700" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="image-title" value="イメージ" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="120" y="118" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="image-arrow" value="→" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="200" y="118" width="30" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="image-desc" value="レジストリに保存（Docker Hub, ECR, GCR など）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="230" y="118" width="360" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="image-note" value="Dockerfile からいつでも再ビルド可能" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="148" width="260" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 2. コンテナ -->
+        <mxCell id="container-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="210" width="700" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="container-title" value="コンテナ" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="120" y="218" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="container-arrow" value="→" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="218" width="30" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="container-desc" value="再作成可能（イメージ + 設定から起動）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="230" y="218" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="container-note" value="使い捨て可能な実行単位、状態は保持しない設計が理想" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="248" width="380" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 3. ボリューム（ハイライト） -->
+        <mxCell id="volume-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="100" y="310" width="700" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-title" value="ボリューム" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="120" y="318" width="90" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-arrow" value="→" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="210" y="318" width="30" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-badge" value="【要バックアップ】" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b85450;strokeColor=#b85450;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="318" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-desc" value="永続データ（DB、アップロードファイル等）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="390" y="318" width="310" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-note" value="コンテナ削除後もデータが残る唯一の場所。定期バックアップが必須。" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#b85450;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="240" y="355" width="450" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-examples" value="例: MySQL データ、Redis スナップショット、ユーザーアップロード" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="240" y="375" width="400" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- 4. 設定ファイル -->
+        <mxCell id="config-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="420" width="700" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="config-title" value="設定ファイル" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="120" y="428" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="config-arrow" value="→" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="220" y="428" width="30" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="config-desc" value="Git 管理（docker-compose.yml, Dockerfile, .env 等）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="250" y="428" width="380" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="config-note" value="バージョン管理で履歴を追跡、いつでも復元可能" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="250" y="458" width="320" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

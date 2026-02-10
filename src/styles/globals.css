@@ -77,9 +77,19 @@ html.dark {
     max-width: calc(100vw - 2rem);
   }
 
-  /* 画像のモバイル対応 */
+  /* 画像を含む段落: 画像のみの場合はマージンを調整 */
+  .prose-docker p:has(> img:only-child) {
+    @apply my-0;
+  }
+
+  /* ダイアグラム画像のスタイル */
   .prose-docker img {
-    @apply max-w-full h-auto;
+    @apply max-w-full h-auto block mx-auto my-8 rounded-lg;
+  }
+
+  /* ダークモード: 白背景画像の視認性向上 */
+  .dark .prose-docker img {
+    @apply bg-white/95 p-3 shadow-lg shadow-black/20 border border-slate-600/30 rounded-xl;
   }
 
   /* ASCII art/ダイアグラムのモバイル対応 */

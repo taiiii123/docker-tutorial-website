@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="swarm-ingress" name="Swarm Ingress ネットワーク">
+    <mxGraphModel dx="900" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="650" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Swarm Ingress ネットワーク" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="290" y="15" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 外部リクエスト -->
+        <mxCell id="external" value="外部リクエスト&#xa;（ユーザー / ロードバランサー）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="60" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: 外部 → Ingress -->
+        <mxCell id="arrow-ext-ingress" value="HTTP :80" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;fontSize=11;fontColor=#333333;fontStyle=1;fontFamily=monospace;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="110" as="sourcePoint" />
+            <mxPoint x="440" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Ingress Network バー -->
+        <mxCell id="ingress-bar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="740" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ingress-label" value="Ingress Network（ルーティングメッシュ）" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="240" y="168" width="310" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ingress-desc" value="どのノードでもポート 80 でアクセス可能 → 内部で適切なコンテナにルーティング" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="180" y="200" width="520" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Ingress → Node 1 -->
+        <mxCell id="arrow-i-n1" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="240" as="sourcePoint" />
+            <mxPoint x="200" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- 矢印: Ingress → Node 2 -->
+        <mxCell id="arrow-i-n2" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="240" as="sourcePoint" />
+            <mxPoint x="450" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- 矢印: Ingress → Node 3 -->
+        <mxCell id="arrow-i-n3" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="240" as="sourcePoint" />
+            <mxPoint x="700" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ロードバランシングラベル -->
+        <mxCell id="lb-label" value="ロードバランシング" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="270" width="130" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Node 1 -->
+        <mxCell id="node1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="node1-label" value="Node 1" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="160" y="308" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="node1-port" value=":80 公開" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="155" y="333" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="n1-web" value="web コンテナ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="360" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n1-web-detail" value="nginx:latest&#xa;ポート 80" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="150" y="420" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Node 2 -->
+        <mxCell id="node2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="300" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="node2-label" value="Node 2" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="410" y="308" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="node2-port" value=":80 公開" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="405" y="333" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="n2-web" value="web コンテナ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="375" y="360" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n2-web-detail" value="nginx:latest&#xa;ポート 80" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="400" y="420" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Node 3 -->
+        <mxCell id="node3-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="300" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="node3-label" value="Node 3" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="660" y="308" width="70" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="node3-port" value=":80 公開" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="655" y="333" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="n3-web" value="web コンテナ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="625" y="360" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n3-web-detail" value="nginx:latest&#xa;ポート 80" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="650" y="420" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 説明 -->
+        <mxCell id="note" value="※ コンテナが存在しないノードにリクエストが来ても、Ingress Network が適切なノードにルーティングする" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="130" y="520" width="640" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

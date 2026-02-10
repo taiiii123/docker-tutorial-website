@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="isolation-level" name="VM vs コンテナの隔離レベル比較">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="VM vs コンテナの隔離レベル比較" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="335" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ====== 左側: 仮想マシン ====== -->
+
+        <!-- 外枠 -->
+        <mxCell id="vm-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="480" height="420" as="geometry" />
+        </mxCell>
+
+        <!-- ヘッダー -->
+        <mxCell id="vm-header" value="仮想マシン（VM）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="400" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 項目1 -->
+        <mxCell id="vm-item1-icon" value="" style="shape=mxgraph.signs.safety.eye_protection;fillColor=#4472C4;strokeColor=none;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="110" y="175" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-item1" value="完全に独立したOS空間" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=14;fontColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="170" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 項目2 -->
+        <mxCell id="vm-item2" value="独自のカーネル" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=14;fontColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="220" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 項目3 -->
+        <mxCell id="vm-item3" value="独自のネットワークスタック" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=14;fontColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="270" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 項目4 -->
+        <mxCell id="vm-item4" value="独自のファイルシステム" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=14;fontColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="320" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- セキュリティ -->
+        <mxCell id="vm-security" value="セキュリティ: 高い" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;fontStyle=1;fontColor=#2D7D2D;" vertex="1" parent="1">
+          <mxGeometry x="120" y="390" width="360" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 隔離レベルバー -->
+        <mxCell id="vm-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="120" y="450" width="360" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="vm-bar-fill" value="隔離レベル: ★★★★★" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="450" width="360" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ====== 右側: コンテナ ====== -->
+
+        <!-- 外枠 -->
+        <mxCell id="ct-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="620" y="80" width="480" height="420" as="geometry" />
+        </mxCell>
+
+        <!-- ヘッダー -->
+        <mxCell id="ct-header" value="コンテナ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="660" y="100" width="400" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 項目1 -->
+        <mxCell id="ct-item1" value="プロセスレベルの隔離" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=14;fontColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="170" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 項目2 -->
+        <mxCell id="ct-item2" value="カーネル共有" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=14;fontColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="220" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 項目3 -->
+        <mxCell id="ct-item3" value="namespace による隔離" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=14;fontColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="270" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 項目4 -->
+        <mxCell id="ct-item4" value="cgroups によるリソース制限" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=14;fontColor=#333333;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="320" width="360" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- セキュリティ -->
+        <mxCell id="ct-security" value="セキュリティ: 中程度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=15;fontStyle=1;fontColor=#B8860B;" vertex="1" parent="1">
+          <mxGeometry x="680" y="390" width="360" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 隔離レベルバー -->
+        <mxCell id="ct-bar-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E0E0;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="680" y="450" width="360" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ct-bar-fill" value="隔離レベル: ★★★☆☆" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ED7D31;strokeColor=none;fontColor=#FFFFFF;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="450" width="216" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 中央の VS テキスト -->
+        <mxCell id="vs-text" value="VS" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="555" y="270" width="50" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

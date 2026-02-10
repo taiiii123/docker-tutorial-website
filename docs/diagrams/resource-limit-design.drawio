@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="resource-limit-design" name="リソース制限設計指針">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="860" pageHeight="640" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="リソース制限設計指針" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="290" y="15" width="220" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 外枠 -->
+        <mxCell id="outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="65" width="780" height="540" as="geometry" />
+        </mxCell>
+
+        <!-- 指針1: 本番環境では必ず制限を設定 -->
+        <mxCell id="g1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="85" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="g1-num" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="110" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g1-title" value="本番環境では必ず制限を設定" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="145" y="103" width="240" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="g1-arrow" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=2;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="120" as="sourcePoint" />
+            <mxPoint x="440" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g1-desc" value="メモリとCPUの両方を設定" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="103" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="g1-detail" value="deploy.resources.limits でメモリ上限とCPU上限を必ず設定する" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="145" y="140" width="400" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 指針2: 適切な値を設定 -->
+        <mxCell id="g2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="205" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="g2-num" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g2-title" value="適切な値を設定" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="145" y="223" width="140" height="25" as="geometry" />
+        </mxCell>
+        <!-- 低すぎる場合 -->
+        <mxCell id="g2-low" value="低すぎる: パフォーマンス低下" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="215" width="200" height="30" as="geometry" />
+        </mxCell>
+        <!-- 高すぎる場合 -->
+        <mxCell id="g2-high" value="高すぎる: 保護効果なし" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="255" width="200" height="30" as="geometry" />
+        </mxCell>
+        <!-- 適切 -->
+        <mxCell id="g2-good" value="適切な値" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="235" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g2-detail" value="アプリケーションの実際の使用量に基づいてバランスを取る" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="145" y="265" width="360" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 指針3: 監視とアラート -->
+        <mxCell id="g3-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="325" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="g3-num" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="350" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g3-title" value="監視とアラート" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="145" y="343" width="130" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="g3-arrow" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=2;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="360" as="sourcePoint" />
+            <mxPoint x="330" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g3-desc" value="リソース使用率80%超で警告" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="343" width="220" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="g3-detail" value="Prometheus + Grafana 等でリソース使用状況をリアルタイム監視する" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="145" y="380" width="420" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 指針4: 段階的に調整 -->
+        <mxCell id="g4-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="445" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="g4-num" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="470" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g4-title" value="段階的に調整" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="145" y="463" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="g4-arrow" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=2;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="480" as="sourcePoint" />
+            <mxPoint x="320" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g4-desc" value="実際の使用量を見ながら最適化" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="463" width="250" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="g4-detail" value="初期値を設定 → モニタリング → 実測値に基づいて調整 のサイクルを回す" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="145" y="500" width="470" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

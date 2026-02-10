@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="resource-allocation" name="リソース制限の効果">
+    <mxGraphModel dx="900" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="860" pageHeight="580" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="リソース制限の効果" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="15" width="220" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ホストマシン外枠 -->
+        <mxCell id="host" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="65" width="780" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="host-label" value="ホストマシン" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="55" y="73" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="host-spec" value="16GB RAM / 8 CPU" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="170" y="75" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- リソースバー: メモリ -->
+        <mxCell id="mem-bar-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="110" width="740" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mem-label" value="RAM" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="113" width="40" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Web メモリ (512MB / 16GB = 3.2%) -->
+        <mxCell id="mem-web" value="512MB" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="110" width="24" height="30" as="geometry" />
+        </mxCell>
+        <!-- API メモリ (1GB / 16GB = 6.25%) -->
+        <mxCell id="mem-api" value="1GB" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="124" y="110" width="46" height="30" as="geometry" />
+        </mxCell>
+        <!-- DB メモリ (2GB / 16GB = 12.5%) -->
+        <mxCell id="mem-db" value="2GB" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="110" width="93" height="30" as="geometry" />
+        </mxCell>
+        <!-- 残り空き -->
+        <mxCell id="mem-free" value="空き: 12.5GB" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="690" y="113" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- リソースバー: CPU -->
+        <mxCell id="cpu-bar-bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="150" width="740" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cpu-label" value="CPU" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="60" y="153" width="40" height="25" as="geometry" />
+        </mxCell>
+        <!-- Web CPU (0.5 / 8 = 6.25%) -->
+        <mxCell id="cpu-web" value="0.5" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="150" width="46" height="30" as="geometry" />
+        </mxCell>
+        <!-- API CPU (1.0 / 8 = 12.5%) -->
+        <mxCell id="cpu-api" value="1.0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="146" y="150" width="93" height="30" as="geometry" />
+        </mxCell>
+        <!-- DB CPU (2.0 / 8 = 25%) -->
+        <mxCell id="cpu-db" value="2.0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="239" y="150" width="185" height="30" as="geometry" />
+        </mxCell>
+        <!-- 残り空き -->
+        <mxCell id="cpu-free" value="空き: 4.5 CPU" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="690" y="153" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: Web -->
+        <mxCell id="web-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="70" y="210" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="web-title" value="Web コンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="110" y="220" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="web-mem" value="Mem: 512MB" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="255" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="web-cpu" value="CPU: 0.5" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="280" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: API -->
+        <mxCell id="api-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="310" y="210" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="api-title" value="API コンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="355" y="220" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="api-mem" value="Mem: 1GB" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="255" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="api-cpu" value="CPU: 1.0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="280" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: DB -->
+        <mxCell id="db-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="550" y="210" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="db-title" value="DB コンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="600" y="220" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="db-mem" value="Mem: 2GB" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="255" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="db-cpu" value="CPU: 2.0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="280" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 補足ノート -->
+        <mxCell id="note" value="各コンテナは制限を超えてリソースを使用できない → システム全体の安定性が保たれる" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="100" y="450" width="660" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

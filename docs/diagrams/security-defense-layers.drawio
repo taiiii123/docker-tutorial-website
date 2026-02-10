@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="security-layers" name="Defense in Depth">
+    <mxGraphModel dx="700" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="700" pageHeight="520" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="多層防御（Defense in Depth）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="10" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 5（最外層）: 監視・監査 -->
+        <mxCell id="l5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="50" width="580" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-label" value="Layer 5: 監視・監査" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="55" y="57" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l5-items" value="ログ収集 / 異常検知 / セキュリティ監査" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="200" y="57" width="240" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 4: ホストOS -->
+        <mxCell id="l4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="70" y="85" width="520" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-label" value="Layer 4: ホスト OS セキュリティ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="85" y="92" width="230" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4-items" value="SELinux / AppArmor / seccomp / OS セキュリティ更新" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="320" y="92" width="300" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 3: ネットワーク -->
+        <mxCell id="l3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="100" y="120" width="500" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-label" value="Layer 3: ネットワークセキュリティ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="115" y="127" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l3-items" value="ネットワーク分離 / 暗号化通信 / ファイアウォール" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="360" y="127" width="300" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 2: コンテナランタイム -->
+        <mxCell id="l2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="130" y="155" width="400" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-label" value="Layer 2: コンテナランタイムセキュリティ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="145" y="162" width="290" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l2-items" value="非rootユーザー / 読み取り専用FS / Capability制限" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="145" y="183" width="310" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 1（最内層）: イメージセキュリティ -->
+        <mxCell id="l1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="160" y="210" width="340" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-label" value="Layer 1: イメージセキュリティ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="175" y="218" width="220" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- イメージセキュリティ項目 -->
+        <mxCell id="l1-item1" value="信頼できるベースイメージ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="250" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-item2" value="脆弱性スキャン" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="250" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-item3" value="最小限のパッケージ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="295" width="150" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-item4" value="マルチステージビルド" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="295" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="l1-item5" value="シークレット管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=11;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="340" width="160" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

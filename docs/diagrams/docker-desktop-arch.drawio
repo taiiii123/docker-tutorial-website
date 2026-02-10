@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="docker-desktop-arch" name="Docker Desktop アーキテクチャ">
+    <mxGraphModel dx="1422" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker Desktop のアーキテクチャ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Column 1: Windows ========== -->
+
+        <!-- Windows 外枠 -->
+        <mxCell id="win-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#4472C4;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="400" height="620" as="geometry" />
+        </mxCell>
+
+        <!-- Windows Host -->
+        <mxCell id="win-host" value="Windows Host" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2E5DA0;fontSize=16;fontStyle=1;fontColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="100" width="340" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Desktop -->
+        <mxCell id="win-dd" value="Docker Desktop" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="190" width="340" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Host → DD -->
+        <mxCell id="win-arrow1" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=2;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="150" as="sourcePoint" />
+            <mxPoint x="240" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- WSL 2 / Hyper-V -->
+        <mxCell id="win-hyper" value="WSL 2 / Hyper-V" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="275" width="340" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: DD → Hyper-V -->
+        <mxCell id="win-arrow2" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=2;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="235" as="sourcePoint" />
+            <mxPoint x="240" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Linux VM -->
+        <mxCell id="win-vm" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="70" y="360" width="340" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Hyper-V → VM -->
+        <mxCell id="win-arrow3" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=2;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="320" as="sourcePoint" />
+            <mxPoint x="240" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Linux Kernel -->
+        <mxCell id="win-kernel" value="Linux Kernel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="90" y="380" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Engine -->
+        <mxCell id="win-engine" value="Docker Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="90" y="440" width="300" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- VM ラベル -->
+        <mxCell id="win-vm-label" value="Linux VM" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#9673a6;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="360" width="80" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- プラットフォームラベル -->
+        <mxCell id="win-platform" value="Windows" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#4472C4;" vertex="1" parent="1">
+          <mxGeometry x="185" y="550" width="110" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 特記事項 -->
+        <mxCell id="win-note" value="WSL 2 推奨（高速・安定）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#999999;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="145" y="575" width="190" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Column 2: Mac (Intel) ========== -->
+
+        <!-- Mac Intel 外枠 -->
+        <mxCell id="mac-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#82b366;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="490" y="80" width="400" height="620" as="geometry" />
+        </mxCell>
+
+        <!-- macOS Host -->
+        <mxCell id="mac-host" value="macOS Host" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#5A8B45;fontSize=16;fontStyle=1;fontColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="100" width="340" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Desktop -->
+        <mxCell id="mac-dd" value="Docker Desktop" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="340" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 -->
+        <mxCell id="mac-arrow1" value="" style="endArrow=block;html=1;strokeColor=#82b366;strokeWidth=2;fillColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="150" as="sourcePoint" />
+            <mxPoint x="690" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- HyperKit -->
+        <mxCell id="mac-hyperkit" value="HyperKit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="520" y="275" width="340" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 -->
+        <mxCell id="mac-arrow2" value="" style="endArrow=block;html=1;strokeColor=#82b366;strokeWidth=2;fillColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="235" as="sourcePoint" />
+            <mxPoint x="690" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Linux VM -->
+        <mxCell id="mac-vm" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="520" y="360" width="340" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 -->
+        <mxCell id="mac-arrow3" value="" style="endArrow=block;html=1;strokeColor=#82b366;strokeWidth=2;fillColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="690" y="320" as="sourcePoint" />
+            <mxPoint x="690" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Linux Kernel -->
+        <mxCell id="mac-kernel" value="Linux Kernel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="540" y="380" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Engine -->
+        <mxCell id="mac-engine" value="Docker Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="540" y="440" width="300" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- VM ラベル -->
+        <mxCell id="mac-vm-label" value="Linux VM" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#9673a6;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="780" y="360" width="80" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- プラットフォームラベル -->
+        <mxCell id="mac-platform" value="Mac (Intel)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="635" y="550" width="110" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 特記事項 -->
+        <mxCell id="mac-note" value="xhyve ベースの軽量 VM" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#999999;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="575" width="180" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Column 3: Mac (Apple Silicon) ========== -->
+
+        <!-- Apple Silicon 外枠 -->
+        <mxCell id="arm-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#ED7D31;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="940" y="80" width="400" height="620" as="geometry" />
+        </mxCell>
+
+        <!-- macOS Host -->
+        <mxCell id="arm-host" value="macOS Host" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ED7D31;strokeColor=#C96520;fontSize=16;fontStyle=1;fontColor=#FFFFFF;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="970" y="100" width="340" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Desktop -->
+        <mxCell id="arm-dd" value="Docker Desktop" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="970" y="190" width="340" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 -->
+        <mxCell id="arm-arrow1" value="" style="endArrow=block;html=1;strokeColor=#ED7D31;strokeWidth=2;fillColor=#ED7D31;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1140" y="150" as="sourcePoint" />
+            <mxPoint x="1140" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Virtualization.framework -->
+        <mxCell id="arm-vf" value="Virtualization.framework" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="970" y="275" width="340" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 -->
+        <mxCell id="arm-arrow2" value="" style="endArrow=block;html=1;strokeColor=#ED7D31;strokeWidth=2;fillColor=#ED7D31;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1140" y="235" as="sourcePoint" />
+            <mxPoint x="1140" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Linux VM -->
+        <mxCell id="arm-vm" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="970" y="360" width="340" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 -->
+        <mxCell id="arm-arrow3" value="" style="endArrow=block;html=1;strokeColor=#ED7D31;strokeWidth=2;fillColor=#ED7D31;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1140" y="320" as="sourcePoint" />
+            <mxPoint x="1140" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Linux Kernel (ARM64) -->
+        <mxCell id="arm-kernel" value="Linux Kernel (ARM64)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="990" y="380" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Engine -->
+        <mxCell id="arm-engine" value="Docker Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="990" y="440" width="300" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- VM ラベル -->
+        <mxCell id="arm-vm-label" value="Linux VM" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#9673a6;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="360" width="80" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- プラットフォームラベル -->
+        <mxCell id="arm-platform" value="Mac (Apple Silicon)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#ED7D31;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="550" width="160" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 特記事項 -->
+        <mxCell id="arm-note" value="Apple 純正フレームワーク&#xa;ARM64 ネイティブ対応" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#999999;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="575" width="160" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 共通ポイント -->
+        <mxCell id="common-note" value="共通: すべてのプラットフォームで Linux VM 内に Docker Engine が動作" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="370" y="730" width="640" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="docker-run-flow" name="docker run nginx の実行フロー">
+    <mxGraphModel dx="1100" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1100" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="docker run nginx の実行フロー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="260" y="15" width="340" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- コマンド表示 -->
+        <mxCell id="cmd" value="$ docker run nginx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;fontColor=#00ff00;fontSize=16;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="280" y="65" width="300" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: コマンド → ステップ1 -->
+        <mxCell id="a0" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="115" as="sourcePoint" />
+            <mxPoint x="430" y="145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ1: Docker CLI がコマンドを解析 -->
+        <mxCell id="s1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="150" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-num" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="165" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-text" value="Docker CLI がコマンドを解析" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="285" y="160" width="240" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-desc" value="run コマンド、イメージ名 (nginx)、オプションを解析" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="285" y="185" width="330" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ1 → ステップ2 -->
+        <mxCell id="a1" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="225" as="sourcePoint" />
+            <mxPoint x="430" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ2: REST API で Docker Daemon に送信 -->
+        <mxCell id="s2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="260" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-num" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="275" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-text" value="REST API で Docker Daemon に送信" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="285" y="270" width="300" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-desc" value="Unix ソケット経由で dockerd にリクエスト送信" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="285" y="295" width="310" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ2 → ステップ3 -->
+        <mxCell id="a2" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="335" as="sourcePoint" />
+            <mxPoint x="430" y="365" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ3: イメージの存在を確認 (分岐あり) -->
+        <mxCell id="s3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="370" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-num" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="385" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-text" value="Docker Daemon がイメージの存在を確認" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="285" y="378" width="340" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-desc" value="ローカルにイメージが存在するかチェック" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="285" y="403" width="280" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 分岐: Registry からプル -->
+        <mxCell id="branch-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="635" y="405" as="sourcePoint" />
+            <mxPoint x="700" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="branch-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="370" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="branch-text" value="なければ&#10;Registry からプル" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="725" y="378" width="130" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="branch-label" value="イメージなし" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontStyle=2;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="640" y="385" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ3 → ステップ4 -->
+        <mxCell id="a3" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="445" as="sourcePoint" />
+            <mxPoint x="430" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ4: containerd にコンテナ作成を依頼 -->
+        <mxCell id="s4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="480" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-num" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="495" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-text" value="containerd にコンテナ作成を依頼" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="285" y="488" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-desc" value="gRPC API でコンテナランタイムに指示" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="285" y="513" width="270" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ4 → ステップ5 -->
+        <mxCell id="a4" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="555" as="sourcePoint" />
+            <mxPoint x="430" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ5: containerd が runc を呼び出し -->
+        <mxCell id="s5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="590" width="400" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-num" value="5" style="ellipse;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="605" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-text" value="containerd が runc を呼び出し" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="285" y="598" width="260" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="s5-desc" value="OCI ランタイム仕様に基づきプロセスを準備" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="285" y="623" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ5 → ステップ6 -->
+        <mxCell id="a5" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="665" as="sourcePoint" />
+            <mxPoint x="430" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ6: runc がコンテナプロセスを作成 -->
+        <mxCell id="s6" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="230" y="700" width="400" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s6-num" value="6" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d6b656;strokeColor=#d6b656;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="715" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s6-text" value="runc がコンテナプロセスを作成" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="285" y="708" width="270" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="s6-desc" value="Namespace、Cgroup、chroot を設定し&#10;隔離されたプロセスを生成" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="285" y="733" width="250" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ6 → ステップ7 -->
+        <mxCell id="a6" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="785" as="sourcePoint" />
+            <mxPoint x="430" y="815" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ7: コンテナが実行開始 -->
+        <mxCell id="s7" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="230" y="820" width="400" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s7-num" value="7" style="ellipse;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="835" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s7-text" value="コンテナが実行開始" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="285" y="828" width="170" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="s7-desc" value="nginx プロセスが隔離環境内で起動&#10;指定ポートでリクエストを待ち受け" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="285" y="855" width="260" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 右側のコンポーネントラベル -->
+        <mxCell id="label-cli" value="Docker CLI" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=2;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="130" y="175" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-cli-line" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#6c8ebf;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="130" as="sourcePoint" />
+            <mxPoint x="170" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="label-daemon" value="Docker Daemon" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=2;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="405" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-daemon-line" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#82b366;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="350" as="sourcePoint" />
+            <mxPoint x="170" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="label-runtime" value="コンテナランタイム" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=2;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-runtime-line" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#d6b656;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="570" as="sourcePoint" />
+            <mxPoint x="170" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

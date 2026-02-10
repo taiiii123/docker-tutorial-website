@@ -233,25 +233,7 @@ FROM gcr.io/distroless/static-debian12
 
 ### フローチャート
 
-```
-開始
-  │
-  ├─ 静的バイナリ？（Go, Rust）
-  │    ├─ Yes → scratch または distroless/static
-  │    └─ No ↓
-  │
-  ├─ セキュリティ最優先？
-  │    ├─ Yes → distroless
-  │    └─ No ↓
-  │
-  ├─ glibc互換性が必要？
-  │    ├─ Yes → debian-slim
-  │    └─ No ↓
-  │
-  ├─ サイズ最小化優先？
-  │    ├─ Yes → alpine
-  │    └─ No → debian-slim または公式言語イメージ-slim
-```
+![ベースイメージ選択フロー](/images/diagrams/base-image-selection-flow.png)
 
 ### 環境別の推奨
 

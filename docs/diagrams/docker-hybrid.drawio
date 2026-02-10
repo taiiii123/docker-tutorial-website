@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="hybrid" name="VM + Container Hybrid">
+    <mxGraphModel dx="700" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="700" pageHeight="350" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="VM + コンテナ ハイブリッド構成" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="190" y="10" width="270" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- クラウドVM 外枠 -->
+        <mxCell id="cloud-vm" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="55" width="580" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud-label" value="クラウド VM（AWS EC2 / GCP GCE / Azure VM）" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="75" y="62" width="350" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Container 1 -->
+        <mxCell id="c1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="90" y="100" width="150" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-icon" value="🌐" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="140" y="105" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-title" value="Frontend" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="125" y="140" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-desc" value="Container" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="125" y="160" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-tech" value="Nginx + React" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="120" y="178" width="90" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Container 2 -->
+        <mxCell id="c2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="270" y="100" width="150" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-icon" value="⚙" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="320" y="105" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-title" value="Backend" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="305" y="140" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-desc" value="Container" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="308" y="160" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-tech" value="Node.js API" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="305" y="178" width="80" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Container 3 -->
+        <mxCell id="c3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="100" width="150" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="500" y="105" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-title" value="Database" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="485" y="140" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-desc" value="Container" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="488" y="160" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-tech" value="PostgreSQL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="488" y="178" width="70" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Engine -->
+        <mxCell id="docker-engine" value="Docker Engine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="225" width="510" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 説明テキスト -->
+        <mxCell id="note" value="VM がセキュリティ境界を提供し、その中でコンテナがアプリケーションを隔離" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#888888;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="110" y="295" width="440" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

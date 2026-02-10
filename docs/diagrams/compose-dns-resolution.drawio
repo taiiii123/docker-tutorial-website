@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="compose-dns-resolution" name="Docker Compose DNS 解決">
+    <mxGraphModel dx="950" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="950" pageHeight="700" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker Compose DNS 名前解決" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="320" y="15" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Compose ネットワーク外枠 -->
+        <mxCell id="network-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2496ED;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="870" height="610" as="geometry" />
+        </mxCell>
+        <mxCell id="network-label" value="Docker Compose ネットワーク (myapp_default)" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#2496ED;" vertex="1" parent="1">
+          <mxGeometry x="55" y="62" width="330" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker DNS サーバー -->
+        <mxCell id="dns-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="100" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dns-icon" value="🔍" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="445" y="102" width="45" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="dns-title" value="Docker 内蔵 DNS サーバー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="370" y="140" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="dns-ip" value="127.0.0.11" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="430" y="167" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- DNS 解決テーブル -->
+        <mxCell id="dns-table-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="100" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dns-table-title" value="DNS レコード" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="730" y="105" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="dns-record-1" value="&quot;db&quot;    → 172.18.0.3" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="695" y="132" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="dns-record-2" value="&quot;cache&quot; → 172.18.0.4" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="695" y="155" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="dns-record-3" value="&quot;app&quot;   → 172.18.0.2" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="695" y="178" width="170" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- app コンテナ -->
+        <mxCell id="app-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="300" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="app-icon" value="⚙" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="205" y="305" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="app-title" value="app コンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="180" y="350" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="app-ip" value="172.18.0.2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#82b366;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="185" y="378" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="app-env" value="環境変数: DB_HOST=db" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="145" y="405" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="app-env2" value="CACHE_HOST=cache" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="170" y="425" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: app → DNS (クエリ) -->
+        <mxCell id="arrow-app-dns" value="① DNS クエリ: &quot;db&quot;" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;fontSize=11;fontColor=#6c8ebf;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="295" as="sourcePoint" />
+            <mxPoint x="400" y="215" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: DNS → app (応答) -->
+        <mxCell id="arrow-dns-app" value="② 応答: 172.18.0.3" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;dashed=1;fontSize=11;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="215" as="sourcePoint" />
+            <mxPoint x="250" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- db コンテナ -->
+        <mxCell id="db-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="550" y="300" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="db-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="625" y="305" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="db-title" value="db コンテナ (MySQL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="573" y="350" width="155" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="db-ip" value="172.18.0.3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#d6b656;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="600" y="378" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="db-port" value=":3306" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="625" y="400" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: app → db (接続) -->
+        <mxCell id="arrow-app-db" value="③ 接続: 172.18.0.3:3306" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;fontSize=11;fontColor=#d6b656;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="380" as="sourcePoint" />
+            <mxPoint x="545" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- cache コンテナ -->
+        <mxCell id="cache-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="550" y="500" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-icon" value="⚡" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="625" y="505" width="45" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-title" value="cache コンテナ (Redis)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="570" y="545" width="170" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-ip" value="172.18.0.4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="605" y="573" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cache-port" value=":6379" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="625" y="595" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: app → cache -->
+        <mxCell id="arrow-app-cache" value="cache → 172.18.0.4" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#666666;endFill=1;dashed=1;fontSize=10;fontColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="465" as="sourcePoint" />
+            <mxPoint x="570" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 説明ボックス -->
+        <mxCell id="explain-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="510" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="explain-title" value="DNS 名前解決フロー" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="90" y="515" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="explain-1" value="① app が &quot;db&quot; の名前解決を DNS サーバーに要求" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="95" y="540" width="320" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="explain-2" value="② DNS サーバーが IP アドレス 172.18.0.3 を返す" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="95" y="565" width="320" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="explain-3" value="③ app が db コンテナに直接接続" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="95" y="590" width="250" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

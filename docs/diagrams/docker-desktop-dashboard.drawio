@@ -1,0 +1,137 @@
+<mxfile host="app.diagrams.net" modified="2026-02-10T00:00:00.000Z" agent="draw.io" version="24.0.0" type="device">
+  <diagram id="docker-desktop-dashboard" name="Docker Desktop Dashboard">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ウィンドウ外枠 -->
+        <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;arcSize=3;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="760" height="500" as="geometry" />
+        </mxCell>
+
+        <!-- タイトルバー -->
+        <mxCell id="3" value="Docker Desktop" style="rounded=0;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontStyle=1;fontSize=14;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="760" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ウィンドウボタン -->
+        <mxCell id="4" value="&#8212;  &#9633;  &#215;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="30" width="90" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 左サイドバー -->
+        <mxCell id="10" value="" style="rounded=0;whiteSpace=wrap;html=1;fill=#f5f5f5;stroke=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="140" height="460" as="geometry" />
+        </mxCell>
+
+        <!-- サイドバー: Containers (選択中) -->
+        <mxCell id="11" value="Containers" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="85" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- サイドバー: Images -->
+        <mxCell id="12" value="Images" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="135" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- サイドバー: Volumes -->
+        <mxCell id="13" value="Volumes" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="185" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- サイドバー: Networks -->
+        <mxCell id="14" value="Networks" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="235" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- サイドバー: Settings -->
+        <mxCell id="15" value="Settings" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="450" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- メインエリア タイトル -->
+        <mxCell id="20" value="Containers" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- テーブルヘッダー -->
+        <mxCell id="30" value="" style="rounded=0;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="200" y="130" width="580" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="NAME" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="130" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="IMAGE" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="130" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="STATUS" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="480" y="130" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="ACTIONS" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="620" y="130" width="100" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- テーブル行1: webserver -->
+        <mxCell id="40" value="" style="rounded=0;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="165" width="580" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="webserver" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="165" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="nginx" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="165" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="Running" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="165" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="Stop" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="172" width="45" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="45" value="Delete" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffe6cc;stroke=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="670" y="172" width="45" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- テーブル行2: db -->
+        <mxCell id="50" value="" style="rounded=0;whiteSpace=wrap;html=1;fill=#f5f5f5;stroke=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="580" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="db" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="200" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="mysql" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="200" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="Running" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="480" y="200" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="Stop" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="207" width="45" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="55" value="Delete" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffe6cc;stroke=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="670" y="207" width="45" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- テーブル行3: redis -->
+        <mxCell id="60" value="" style="rounded=0;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="235" width="580" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="redis" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="235" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="62" value="redis" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="235" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="63" value="Stopped" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fillColor=none;strokeColor=none;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="480" y="235" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="64" value="Start" style="rounded=1;whiteSpace=wrap;html=1;fill=#d5e8d4;stroke=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="242" width="45" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="65" value="Delete" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffe6cc;stroke=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="670" y="242" width="45" height="22" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

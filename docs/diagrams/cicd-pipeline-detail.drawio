@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="cicd-pipeline-detail" name="CI/CD パイプライン詳細ステージ">
+    <mxGraphModel dx="1300" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="700" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="CI/CD パイプライン詳細ステージ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="380" y="15" width="340" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- CI セクション外枠 -->
+        <mxCell id="ci-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=4;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="1080" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-label" value="CI - 継続的インテグレーション" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="55" y="78" width="280" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ソースチェック Stage -->
+        <mxCell id="ci-s1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="120" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-s1-title" value="ソースチェック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="120" y="130" width="130" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-s1-items" value="• lint&#10;• format&#10;• security scan" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="100" y="165" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ソースチェック → ビルド -->
+        <mxCell id="ci-a1" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="200" as="sourcePoint" />
+            <mxPoint x="330" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ビルド Stage -->
+        <mxCell id="ci-s2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="335" y="120" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-s2-title" value="ビルド Stage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="380" y="130" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-s2-items" value="• docker build&#10;• マルチステージビルド&#10;• キャッシュ活用" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="360" y="165" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ビルド → テスト -->
+        <mxCell id="ci-a2" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="200" as="sourcePoint" />
+            <mxPoint x="575" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- テスト Stage -->
+        <mxCell id="ci-s3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="580" y="120" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-s3-title" value="テスト Stage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="635" y="130" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-s3-items" value="• 単体テスト&#10;• 統合テスト&#10;• E2Eテスト" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="615" y="165" width="120" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: テスト → イメージ公開 -->
+        <mxCell id="ci-a3" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="805" y="200" as="sourcePoint" />
+            <mxPoint x="840" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- イメージ公開 Stage -->
+        <mxCell id="ci-s4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="845" y="120" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-s4-title" value="イメージ公開 Stage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="890" y="130" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ci-s4-items" value="• レジストリにpush&#10;• タグ付け&#10;• 脆弱性スキャン" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="875" y="165" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- CD セクション外枠 -->
+        <mxCell id="cd-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=4;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="1080" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="cd-label" value="CD - 継続的デリバリー / デプロイ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="55" y="348" width="290" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: CI → CD -->
+        <mxCell id="cicd-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="315" as="sourcePoint" />
+            <mxPoint x="580" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステージングデプロイ -->
+        <mxCell id="cd-s1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="390" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cd-s1-title" value="ステージングデプロイ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="155" y="400" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cd-s1-items" value="• ステージング環境へ自動デプロイ&#10;• スモークテスト実行&#10;• パフォーマンス検証" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="125" y="435" width="240" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステージング → 承認 -->
+        <mxCell id="cd-a1" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="385" y="465" as="sourcePoint" />
+            <mxPoint x="435" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 承認/レビュー -->
+        <mxCell id="cd-s2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="440" y="390" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cd-s2-title" value="承認 / レビュー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="480" y="400" width="130" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cd-s2-items" value="• 手動承認ゲート&#10;• コードレビュー確認&#10;• リリース判定" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="465" y="435" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: 承認 → 本番 -->
+        <mxCell id="cd-a2" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="645" y="465" as="sourcePoint" />
+            <mxPoint x="695" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 本番デプロイ -->
+        <mxCell id="cd-s3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="390" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="cd-s3-title" value="本番デプロイ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="785" y="400" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cd-s3-items" value="• ローリングアップデート&#10;• カナリアデプロイ&#10;• ヘルスチェック&#10;• ロールバック体制" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="725" y="435" width="180" height="80" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

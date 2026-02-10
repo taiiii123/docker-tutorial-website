@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Claude" version="24.0.0" type="device">
+  <diagram id="port-mapping" name="Page-1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="ポートマッピングの仕組み" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="334" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== 外部（インターネット） ===== -->
+        <mxCell id="internet" value="🌐 外部（インターネット / ブラウザ）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1;shadow=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="334" y="60" width="500" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 外部 → ホスト 矢印 -->
+        <mxCell id="arrow-ext-host" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=3;strokeColor=#6c8ebf;fillColor=#6c8ebf;endSize=12;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="584" y="120" as="sourcePoint" />
+            <mxPoint x="584" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow-ext-label" value="HTTP リクエスト" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#6c8ebf;fontStyle=2;labelBackgroundColor=#FFFFFF;" vertex="1" connectable="0" parent="arrow-ext-host">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== ホストマシン ===== -->
+        <mxCell id="host" value="ホストマシン" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=4;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="234" y="180" width="700" height="580" as="geometry" />
+        </mxCell>
+
+        <!-- ホストのポート表示 -->
+        <mxCell id="host-port" value="ポート 8080 で待ち受け&#xa;http://localhost:8080" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;shadow=0;verticalAlign=middle;" vertex="1" parent="host">
+          <mxGeometry x="200" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ポートマッピング矢印 -->
+        <mxCell id="arrow-port-map" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=3;strokeColor=#d6b656;fillColor=#d6b656;endSize=12;" edge="1" parent="host">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="110" as="sourcePoint" />
+            <mxPoint x="350" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="port-map-label" value="ポートマッピング&#xa;8080 → 80" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=13;fontColor=#d6b656;fontStyle=1;labelBackgroundColor=#FFFFFF;" vertex="1" connectable="0" parent="arrow-port-map">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Docker ネットワーク ===== -->
+        <mxCell id="docker-network" value="Docker ネットワーク（bridge）" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;dashed=1;dashPattern=8 4;" vertex="1" parent="host">
+          <mxGeometry x="100" y="190" width="500" height="340" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ -->
+        <mxCell id="container" value="" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;shadow=1;" vertex="1" parent="docker-network">
+          <mxGeometry x="100" y="60" width="300" height="240" as="geometry" />
+        </mxCell>
+
+        <mxCell id="container-title" value="コンテナ（nginx）" style="text;html=1;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="container">
+          <mxGeometry x="50" y="10" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ内のプロセス -->
+        <mxCell id="nginx-process" value="nginx プロセス&#xa;ポート :80 で起動" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;shadow=0;verticalAlign=middle;" vertex="1" parent="container">
+          <mxGeometry x="50" y="60" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ内のファイルシステム -->
+        <mxCell id="container-fs" value="📁 /usr/share/nginx/html&#xa;（Web コンテンツ）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;fontStyle=0;verticalAlign=middle;" vertex="1" parent="container">
+          <mxGeometry x="50" y="150" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== 右側の説明 ===== -->
+        <mxCell id="explanation-box" value="" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;verticalAlign=top;spacingTop=5;arcSize=8;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="134" y="570" width="900" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="exp-title" value="ポートマッピングとは" style="text;html=1;fontSize=13;fontStyle=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#BF8F00;" vertex="1" parent="explanation-box">
+          <mxGeometry x="20" y="5" width="300" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="exp-text" value="ホストマシンのポート（8080）をコンテナ内のポート（80）に転送する仕組み。docker run -p 8080:80 のように指定する。&#xa;外部からは http://localhost:8080 でアクセスし、Docker がそのリクエストをコンテナの :80 に転送する。" style="text;html=1;fontSize=11;align=left;verticalAlign=top;fillColor=none;strokeColor=none;fontColor=#666666;spacingLeft=5;" vertex="1" parent="explanation-box">
+          <mxGeometry x="20" y="30" width="860" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- フロー番号付きラベル -->
+        <mxCell id="step1" value="① ブラウザが&#xa;localhost:8080 にアクセス" style="text;html=1;fontSize=11;fontStyle=1;align=left;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#6c8ebf;rounded=1;shadow=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="744" y="130" width="190" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step2" value="② Docker がポート&#xa;8080 → 80 に転送" style="text;html=1;fontSize=11;fontStyle=1;align=left;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#d6b656;rounded=1;shadow=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="744" y="300" width="190" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step3" value="③ nginx が :80 で&#xa;リクエストを処理" style="text;html=1;fontSize=11;fontStyle=1;align=left;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#82b366;rounded=1;shadow=1;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="744" y="460" width="190" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

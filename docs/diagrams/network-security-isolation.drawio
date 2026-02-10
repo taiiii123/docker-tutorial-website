@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="network-security-isolation" name="ネットワークセキュリティ分離">
+    <mxGraphModel dx="950" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="950" pageHeight="750" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="ネットワークによるセキュリティ分離" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="310" y="15" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ホストマシン外枠 -->
+        <mxCell id="host-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="850" height="620" as="geometry" />
+        </mxCell>
+        <mxCell id="host-label" value="ホストマシン" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="65" y="108" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 外部アクセス -->
+        <mxCell id="external" value="外部アクセス（インターネット）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="350" y="55" width="220" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="external-icon" value="🌍" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="440" y="72" width="45" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: 外部 → public-network -->
+        <mxCell id="arrow-ext-public" value="HTTP/HTTPS" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#82b366;endFill=1;fontSize=11;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="100" as="sourcePoint" />
+            <mxPoint x="350" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- public-network -->
+        <mxCell id="public-net" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="530" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="public-net-label" value="public-network" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="95" y="158" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- web コンテナ -->
+        <mxCell id="web-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="120" y="210" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="web-icon" value="🌐" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="245" y="215" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="web-title" value="web コンテナ (Nginx)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="185" y="260" width="170" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="web-access-1" value="✓ 公開（外部からアクセス可能）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="175" y="290" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="web-access-2" value="✓ 内部（他コンテナと通信可能）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="175" y="312" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="web-ports" value="ports: &quot;80:80&quot;, &quot;443:443&quot;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="175" y="340" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ネットワークバッジ: web -->
+        <mxCell id="web-badge-pub" value="public" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="217" y="362" width="55" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="web-badge-priv" value="private" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="280" y="362" width="55" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- app コンテナ（public-network 内） -->
+        <mxCell id="app-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="120" y="420" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="app-title" value="app コンテナ (Node.js)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="195" y="427" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="app-badge-pub" value="public" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="227" y="452" width="55" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="app-badge-priv" value="private" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="290" y="452" width="55" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: web → app -->
+        <mxCell id="arrow-web-app" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="385" as="sourcePoint" />
+            <mxPoint x="270" y="415" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- private-network (internal: true) -->
+        <mxCell id="private-net" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="430" y="390" width="440" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="private-net-label" value="private-network (internal: true)" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="445" y="398" width="240" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="private-net-desc" value="外部からのアクセスを完全に遮断" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="445" y="423" width="210" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- db コンテナ -->
+        <mxCell id="db-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="490" y="470" width="320" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="db-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="625" y="475" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="db-title" value="db コンテナ (MySQL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="565" y="520" width="170" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="db-access" value="内部のみ（external アクセス不可）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="555" y="548" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="db-port" value=":3306（内部のみ公開）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="580" y="572" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="db-badge-priv" value="private のみ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="615" y="600" width="85" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: app → db (内部通信可能) -->
+        <mxCell id="arrow-app-db" value="内部通信 ✓" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;fontSize=11;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="460" as="sourcePoint" />
+            <mxPoint x="560" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 外部 → db 遮断 -->
+        <mxCell id="arrow-ext-db-blocked" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#b85450;endFill=1;dashed=1;dashPattern=4 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="100" as="sourcePoint" />
+            <mxPoint x="700" y="385" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="blocked-x" value="✗" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="688" y="225" width="35" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="blocked-label" value="外部通信不可" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="720" y="240" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- セキュリティのポイント説明 -->
+        <mxCell id="security-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="530" width="340" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="security-title" value="セキュリティ設計のポイント" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="90" y="535" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-point-1" value="✓ DB は private-network のみに配置" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="95" y="560" width="250" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-point-2" value="✓ internal: true で外部アクセスを遮断" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="95" y="582" width="270" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-point-3" value="✓ web/app のみが両ネットワークに接続" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="95" y="604" width="270" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-point-4" value="✓ 最小権限の原則に基づくネットワーク設計" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="95" y="626" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-point-5" value="✓ ports 指定がないコンテナは外部非公開" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="95" y="648" width="280" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

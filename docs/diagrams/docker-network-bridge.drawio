@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="network-bridge" name="Docker Bridge Network">
+    <mxGraphModel dx="800" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="450" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ホストマシン外枠 -->
+        <mxCell id="host" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="60" y="20" width="640" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="host-label" value="ホストマシン" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="75" y="28" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- docker0 bridge -->
+        <mxCell id="bridge" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="130" y="70" width="480" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bridge-label" value="docker0 (bridge)" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="280" y="75" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="bridge-ip" value="172.17.0.1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6c8ebf;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="310" y="100" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 接続線 bridge → Container A -->
+        <mxCell id="line-a" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="135" as="sourcePoint" />
+            <mxPoint x="260" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- 接続線 bridge → Container B -->
+        <mxCell id="line-b" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="135" as="sourcePoint" />
+            <mxPoint x="500" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Container A -->
+        <mxCell id="ca" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="195" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-icon" value="📦" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="235" y="200" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-title" value="Container A" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="210" y="250" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-ip" value="172.17.0.2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#82b366;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="210" y="280" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-eth" value="eth0 (veth pair)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="210" y="305" width="110" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Container B -->
+        <mxCell id="cb" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="390" y="195" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-icon" value="📦" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="475" y="200" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-title" value="Container B" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="450" y="250" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-ip" value="172.17.0.3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#d6b656;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="450" y="280" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-eth" value="eth0 (veth pair)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="450" y="305" width="110" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -18,7 +18,7 @@ interface TableOfContentsProps {
 /**
  * Markdownから見出しを抽出
  */
-function extractHeadings(markdown: string): TocItem[] {
+export function extractHeadings(markdown: string): TocItem[] {
   const headings: TocItem[] = []
   // h2とh3を抽出（h1はタイトルなので除外）
   const headingRegex = /^(#{2,3})\s+(.+)$/gm

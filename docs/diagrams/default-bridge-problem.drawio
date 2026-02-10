@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="default-bridge-problem" name="デフォルトbridgeネットワークの問題">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="860" pageHeight="640" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="デフォルトbridgeネットワークの問題" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="220" y="15" width="380" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- デフォルトbridge外枠 -->
+        <mxCell id="bridge" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;arcSize=6;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="70" width="660" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="bridge-label" value="docker0 (デフォルト bridge ネットワーク)" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="115" y="78" width="300" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: Web -->
+        <mxCell id="web" value="Web" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: API -->
+        <mxCell id="api" value="API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: DB -->
+        <mxCell id="db" value="DB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: Redis -->
+        <mxCell id="redis" value="Redis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 双方向矢印: Web↔API -->
+        <mxCell id="e1" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;startFill=1;" edge="1" parent="1" source="web" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 双方向矢印: API↔DB -->
+        <mxCell id="e2" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;startFill=1;" edge="1" parent="1" source="api" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 双方向矢印: Web↔DB (直接!) -->
+        <mxCell id="e3" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;startFill=1;curved=1;" edge="1" parent="1" source="web" target="db">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 双方向矢印: Web↔Redis -->
+        <mxCell id="e4" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;startFill=1;curved=1;" edge="1" parent="1" source="web" target="redis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 双方向矢印: DB↔Redis -->
+        <mxCell id="e5" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;startFill=1;curved=1;" edge="1" parent="1" source="db" target="redis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 双方向矢印: API↔Redis -->
+        <mxCell id="e6" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;startFill=1;" edge="1" parent="1" source="api" target="redis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 問題点ラベル -->
+        <mxCell id="prob1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="400" width="660" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="prob1" value="すべてのコンテナが相互に通信可能" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="280" y="403" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="prob1-desc" value="Webコンテナから直接DBにアクセスでき、セキュリティ境界がない" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="220" y="425" width="400" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prob2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="465" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="prob2" value="DNS解決ができない" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="170" y="468" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="prob2-desc" value="コンテナ名での接続ができずIPアドレスが必要" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="120" y="490" width="310" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="prob3-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="465" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="prob3" value="攻撃者が1つに侵入すると全体に影響" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="460" y="468" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="prob3-desc" value="ネットワーク分離がないため横展開が容易" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="480" y="490" width="280" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

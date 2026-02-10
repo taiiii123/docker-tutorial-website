@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="volume-management" name="Docker Volume管理構造">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="650" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker Volume 管理構造" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="300" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ホストマシン外枠 -->
+        <mxCell id="host-box" value="ホストマシン" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#333333;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="880" height="520" as="geometry" />
+        </mxCell>
+
+        <!-- Container A -->
+        <mxCell id="container-a" value="Container A&#xa;(/app/data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Container B -->
+        <mxCell id="container-b" value="Container B&#xa;(/var/data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="120" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Container C -->
+        <mxCell id="container-c" value="Container C&#xa;(/data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#333333;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="120" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Container A → Volume -->
+        <mxCell id="arrow-a" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=2;fillColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="200" as="sourcePoint" />
+            <mxPoint x="500" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-a-label" value="マウント" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="270" y="260" width="70" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Container B → Volume -->
+        <mxCell id="arrow-b" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=2;fillColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="200" as="sourcePoint" />
+            <mxPoint x="500" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-b-label" value="マウント" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="510" y="270" width="70" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Container C → Volume -->
+        <mxCell id="arrow-c" value="" style="endArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=2;fillColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="780" y="200" as="sourcePoint" />
+            <mxPoint x="500" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-c-label" value="マウント" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="670" y="260" width="70" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Volume -->
+        <mxCell id="volume" value="Docker Volume" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=16;fontStyle=1;fontColor=#333333;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="280" y="360" width="440" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-path" value="/var/lib/docker/volumes/my-volume/_data" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="410" width="340" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ディスクアイコン（ストレージ表現） -->
+        <mxCell id="storage" value="ホストファイルシステム（ディスク）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1;fontSize=12;fontColor=#666666;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="310" y="480" width="380" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Volume → Storage -->
+        <mxCell id="arrow-storage" value="" style="endArrow=block;html=1;strokeColor=#82b366;strokeWidth=2;fillColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="440" as="sourcePoint" />
+            <mxPoint x="500" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 注意書き -->
+        <mxCell id="note" value="※Dockerが管理、永続化される" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=2;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="370" y="545" width="260" height="25" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

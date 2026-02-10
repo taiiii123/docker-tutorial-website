@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="deployment-strategies" name="デプロイメント戦略">
+    <mxGraphModel dx="1100" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="デプロイメント戦略" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="420" y="15" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================= -->
+        <!-- 1. ローリングアップデート (blue) -->
+        <!-- ========================================= -->
+        <mxCell id="rolling-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="1020" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="rolling-title" value="1. ローリングアップデート" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="55" y="68" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="rolling-desc" value="インスタンスを1つずつ順番に更新。ダウンタイムなし。" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="260" y="68" width="350" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Before -->
+        <mxCell id="r-before-label" value="更新前" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="100" width="55" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="r-v1a" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-v1b" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-v1c" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow -->
+        <mxCell id="r-arrow1" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="145" as="sourcePoint" />
+            <mxPoint x="350" y="145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Step 1 -->
+        <mxCell id="r-step1-label" value="Step 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="100" width="55" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="r-s1-v2" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-s1-v1a" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-s1-v1b" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow -->
+        <mxCell id="r-arrow2" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="145" as="sourcePoint" />
+            <mxPoint x="630" y="145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Step 2 -->
+        <mxCell id="r-step2-label" value="Step 2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="100" width="55" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="r-s2-v2a" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-s2-v2b" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-s2-v1" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow -->
+        <mxCell id="r-arrow3" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="145" as="sourcePoint" />
+            <mxPoint x="910" y="145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- After -->
+        <mxCell id="r-after-label" value="完了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="100" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="r-a-v2a" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="910" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r-a-v2b" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="125" width="60" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- メリット/デメリット -->
+        <mxCell id="r-merit" value="メリット: ダウンタイムなし、段階的な更新" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="185" width="280" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="r-demerit" value="デメリット: 更新中は新旧バージョンが混在する" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="205" width="300" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="r-cmd" value="docker service update --image app:v2 webapp" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#6c8ebf;fontFamily=monospace;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="230" width="370" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================= -->
+        <!-- 2. ブルー/グリーンデプロイ (green) -->
+        <!-- ========================================= -->
+        <mxCell id="bg-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="1020" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-title" value="2. ブルー/グリーンデプロイ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="55" y="308" width="210" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-desc" value="新環境を構築し、一括で切り替え。即時ロールバック可能。" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="270" y="308" width="380" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Blue Environment (active) -->
+        <mxCell id="bg-blue-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="350" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-blue-label" value="Blue 環境（v1）" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="355" width="120" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-b-v1a" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="85" y="390" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-b-v1b" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="145" y="390" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-b-v1c" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="390" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-active1" value="本番トラフィック →" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="435" width="130" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Green Environment (standby) -->
+        <mxCell id="bg-green-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="350" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-green-label" value="Green 環境（v2）" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="365" y="355" width="130" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-g-v2a" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="390" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-g-v2b" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="405" y="390" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-g-v2c" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="465" y="390" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-standby" value="待機中（テスト済み）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="435" width="140" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Switch Arrow -->
+        <mxCell id="bg-switch" value="トラフィック切り替え" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#333333;endFill=1;fontSize=11;fontColor=#333333;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="400" as="sourcePoint" />
+            <mxPoint x="660" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- After switch -->
+        <mxCell id="bg-after-blue" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="350" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-after-blue-label" value="Blue（v1）待機" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#999999;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="715" y="363" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bg-after-green" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="410" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-after-green-label" value="Green（v2）本番" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="423" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- メリット/デメリット -->
+        <mxCell id="bg-merit" value="メリット: 即時ロールバック可能、テスト済み環境に切り替え" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="465" width="380" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="bg-demerit" value="デメリット: 2倍のリソースが必要" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="485" width="240" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================= -->
+        <!-- 3. カナリアデプロイ (orange) -->
+        <!-- ========================================= -->
+        <mxCell id="canary-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="1020" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="canary-title" value="3. カナリアデプロイ" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="55" y="548" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="canary-desc" value="少数のインスタンスだけ先に更新し、問題なければ段階的に拡大。" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="220" y="548" width="420" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Stage 1: 10% -->
+        <mxCell id="c-stage1-label" value="10% トラフィック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="585" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-v1a" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="615" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-v1b" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="615" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-v1c" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="615" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-v2" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="615" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c1-canary-label" value="← カナリア" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="625" width="80" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow to stage 2 -->
+        <mxCell id="c-arrow1" value="問題なし" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="660" as="sourcePoint" />
+            <mxPoint x="170" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Stage 2: 50% -->
+        <mxCell id="c-stage2-label" value="50% トラフィック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="698" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-v1a" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="725" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-v1b" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="725" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-v2a" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="725" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-v2b" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="725" width="50" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow to stage 3 -->
+        <mxCell id="c-arrow2" value="問題なし" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="770" as="sourcePoint" />
+            <mxPoint x="170" y="790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Stage 3: 100% complete -->
+        <mxCell id="c-stage3-label" value="100% 完了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="698" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-v2a" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="725" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-v2b" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="725" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-v2c" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="725" width="50" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-v2d" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="725" width="50" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow stage 2 → stage 3 -->
+        <mxCell id="c-arrow3" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="745" as="sourcePoint" />
+            <mxPoint x="330" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Rollback path -->
+        <mxCell id="rollback-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="600" width="420" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rollback-label" value="問題検出時: 即座にロールバック" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="635" y="608" width="240" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="rollback-desc" value="カナリアのみの影響で済むため、被害範囲が最小限" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="635" y="640" width="350" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow to rollback -->
+        <mxCell id="c-rollback-arrow" value="問題あり" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#b85450;endFill=1;dashed=1;fontSize=10;fontColor=#b85450;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="632" as="sourcePoint" />
+            <mxPoint x="620" y="632" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メリット/デメリット -->
+        <mxCell id="c-merit" value="メリット: リスク最小、本番トラフィックで検証可能" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="700" width="320" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c-demerit" value="デメリット: 段階的な切り替えに時間がかかる" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="720" width="300" height="18" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

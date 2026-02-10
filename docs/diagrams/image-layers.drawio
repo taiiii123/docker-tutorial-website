@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="image-layers" name="イメージのレイヤー構造">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="イメージのレイヤー構造" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="335" y="30" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 説明テキスト -->
+        <mxCell id="desc" value="各レイヤーは読み取り専用で、下のレイヤーの上に積み重なります" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="310" y="65" width="550" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 4 (最上層): Application Code -->
+        <mxCell id="layer4" value="Application Code" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;fontColor=#333333;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4-label" value="Layer 4" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="720" y="145" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4-desc" value="アプリケーションコード" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="360" y="165" width="180" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Layer4 → Layer3 -->
+        <mxCell id="arrow-4-3" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#CCCCCC;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="200" as="sourcePoint" />
+            <mxPoint x="650" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Layer 3: npm install -->
+        <mxCell id="layer3" value="npm install（依存関係のインストール）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;fontColor=#333333;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="220" width="500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3-label" value="Layer 3" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="720" y="245" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3-desc" value="package.json に基づく依存パッケージ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="330" y="268" width="240" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 2: Node.js -->
+        <mxCell id="layer2" value="Node.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;fontStyle=1;fontColor=#333333;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="320" width="500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2-label" value="Layer 2" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="720" y="345" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2-desc" value="ランタイム環境" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="390" y="368" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Layer 1 (最下層): Alpine Linux -->
+        <mxCell id="layer1" value="Alpine Linux" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=16;fontStyle=1;fontColor=#333333;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="420" width="500" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1-label" value="Layer 1 (Base)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="720" y="445" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1-desc" value="ベースイメージ（軽量 Linux ディストリビューション）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="468" width="300" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 左側の矢印（積み重なりの方向を示す） -->
+        <mxCell id="arrow-up" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=3;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="490" as="sourcePoint" />
+            <mxPoint x="160" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-label" value="ビルド順序" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#4472C4;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="110" y="290" width="90" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 読み取り専用ラベル -->
+        <mxCell id="readonly-label" value="すべてのレイヤーは&#xa;読み取り専用（Read-Only）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=2;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="380" y="530" width="180" height="50" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

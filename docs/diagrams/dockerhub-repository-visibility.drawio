@@ -1,0 +1,48 @@
+<mxfile host="app.diagrams.net" modified="2026-02-10T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram id="dockerhub-repo-visibility" name="Docker Hub Repository Visibility">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- 外枠 -->
+        <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="40" width="500" height="280" as="geometry" />
+        </mxCell>
+        <!-- タイトル Repository Settings -->
+        <mxCell id="3" value="&lt;b&gt;Repository Settings&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="180" y="60" width="200" height="40" as="geometry" />
+        </mxCell>
+        <!-- 区切り線 -->
+        <mxCell id="4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="170" y="100" width="460" height="10" as="geometry" />
+        </mxCell>
+        <!-- Visibility ラベル -->
+        <mxCell id="5" value="&lt;b&gt;Visibility:&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <!-- Public ラジオボタン（未選択） -->
+        <mxCell id="6" value="" style="shape=mxgraph.ui.radioButton;fillColor=#ffffff;strokeColor=#666666;rSize=5;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="220" y="165" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;b&gt;Public&lt;/b&gt;  -  誰でもアクセス可能" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="245" y="158" width="260" height="30" as="geometry" />
+        </mxCell>
+        <!-- Public 説明ボックス -->
+        <mxCell id="8" value="すべてのユーザーがイメージをpull可能" style="rounded=1;whiteSpace=wrap;html=1;fill=#d5e8d4;stroke=#82b366;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="245" y="188" width="350" height="30" as="geometry" />
+        </mxCell>
+        <!-- Private ラジオボタン（選択済み） -->
+        <mxCell id="9" value="" style="shape=mxgraph.ui.radioButton;fillColor=#dae8fc;strokeColor=#6c8ebf;rSize=5;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="220" y="240" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;b&gt;Private&lt;/b&gt;  -  招待されたユーザーのみ" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="245" y="233" width="300" height="30" as="geometry" />
+        </mxCell>
+        <!-- Private 説明ボックス -->
+        <mxCell id="11" value="招待・権限付与されたユーザーのみアクセス可能" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffe6cc;stroke=#d6b656;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="245" y="263" width="350" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,83 @@
+<mxfile host="app.diagrams.net" modified="2026-02-10T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram id="startup-timing-healthcheck" name="healthcheck使用時の起動タイミング">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- タイトル -->
+        <mxCell id="title" value="&lt;b&gt;healthcheck使用時の起動タイミング&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="20" width="350" height="40" as="geometry" />
+        </mxCell>
+        <!-- 時間軸ラベル -->
+        <mxCell id="timeLabel" value="時間経過 →" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="160" y="70" width="90" height="30" as="geometry" />
+        </mxCell>
+        <!-- 時間軸の矢印 -->
+        <mxCell id="timeArrow" value="" style="endArrow=classic;html=1;strokeColor=#999999;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="95" as="sourcePoint" />
+            <mxPoint x="900" y="95" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- db ラベル -->
+        <mxCell id="dbLabel" value="&lt;b&gt;db:&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="50" height="30" as="geometry" />
+        </mxCell>
+        <!-- db: コンテナ起動 -->
+        <mxCell id="dbStart" value="コンテナ起動" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="120" width="110" height="40" as="geometry" />
+        </mxCell>
+        <!-- db: 初期化... -->
+        <mxCell id="dbInit" value="初期化..." style="rounded=1;whiteSpace=wrap;html=1;fill=#ffe6cc;stroke=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="295" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <!-- db: healthcheck (失敗) -->
+        <mxCell id="dbHealthFail" value="healthcheck&#xa;× (失敗)" style="rounded=1;whiteSpace=wrap;html=1;fill=#f8cecc;stroke=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="120" width="100" height="40" as="geometry" />
+        </mxCell>
+        <!-- db: healthy! -->
+        <mxCell id="dbHealthy" value="healthy!" style="rounded=1;whiteSpace=wrap;html=1;fill=#d5e8d4;stroke=#82b366;fontSize=13;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="570" y="120" width="100" height="40" as="geometry" />
+        </mxCell>
+        <!-- db 接続線 -->
+        <mxCell id="dbLine1" value="" style="endArrow=classic;html=1;strokeColor=#999999;" edge="1" parent="1" source="dbStart" target="dbInit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dbLine2" value="" style="endArrow=classic;html=1;strokeColor=#999999;" edge="1" parent="1" source="dbInit" target="dbHealthFail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dbLine3" value="" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="dbHealthFail" target="dbHealthy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- healthy → app起動 の矢印 -->
+        <mxCell id="triggerArrow" value="&lt;b&gt;✓ (成功)&lt;/b&gt;" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=2;dashed=0;" edge="1" parent="1">
+          <mxGeometry x="0.1" relative="1" as="geometry">
+            <mxPoint x="620" y="160" as="sourcePoint" />
+            <mxPoint x="620" y="260" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <!-- app ラベル -->
+        <mxCell id="appLabel" value="&lt;b&gt;app:&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="50" y="265" width="60" height="30" as="geometry" />
+        </mxCell>
+        <!-- app: コンテナ起動 -->
+        <mxCell id="appStart" value="コンテナ起動" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="260" width="120" height="40" as="geometry" />
+        </mxCell>
+        <!-- app: 正常に接続 -->
+        <mxCell id="appConnect" value="正常に接続" style="rounded=1;whiteSpace=wrap;html=1;fill=#d5e8d4;stroke=#82b366;fontSize=13;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="730" y="260" width="120" height="40" as="geometry" />
+        </mxCell>
+        <!-- app 接続線 -->
+        <mxCell id="appLine1" value="" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="appStart" target="appConnect">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- 説明ボックス -->
+        <mxCell id="descBox" value="healthcheckにより&#xa;適切なタイミングでapp起動" style="rounded=1;whiteSpace=wrap;html=1;fill=#d5e8d4;stroke=#82b366;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="580" y="340" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

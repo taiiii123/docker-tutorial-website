@@ -26,17 +26,7 @@ Dockerfileの以下の命令は新しいレイヤーを作成します。
 
 ### レイヤーの仕組み
 
-```
-イメージ
-├── Layer 4: COPY . /app (100MB) - 読み取り専用
-├── Layer 3: RUN npm install (200MB) - 読み取り専用
-├── Layer 2: COPY package*.json ./ (1KB) - 読み取り専用
-└── Layer 1: FROM node:20-alpine (180MB) - 読み取り専用
-
-コンテナ起動時
-├── 書き込み可能レイヤー（コンテナレイヤー）
-└── 上記の読み取り専用レイヤー（共有）
-```
+![コンテナの読み書きレイヤー構造](/images/diagrams/container-layers-rw.png)
 
 ## レイヤーキャッシュの活用
 
@@ -63,13 +53,7 @@ RUN npm run build
 2. **COPY/ADDのファイル変更**: コピー元のファイルが変更された
 3. **親レイヤーの変更**: 上位レイヤーが再ビルドされた
 
-```
-Layer 1: FROM node:20-alpine  ← 変更なし（キャッシュ使用）
-Layer 2: COPY package*.json   ← 変更なし（キャッシュ使用）
-Layer 3: RUN npm install      ← 変更なし（キャッシュ使用）
-Layer 4: COPY . .             ← ソース変更（再ビルド）
-Layer 5: RUN npm run build    ← 親が変更されたため再ビルド
-```
+![キャッシュ判定フロー](/images/diagrams/cache-decision-flow.png)
 
 ### 最適な命令順序
 

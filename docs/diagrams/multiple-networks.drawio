@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="multiple-networks" name="複数ネットワーク構成">
+    <mxGraphModel dx="950" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="950" pageHeight="650" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="複数ネットワーク構成" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="370" y="15" width="180" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- frontend-network -->
+        <mxCell id="frontend-net" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;dashed=1;dashPattern=8 4;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="50" y="60" width="620" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend-net-label" value="frontend-network" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="65" y="68" width="140" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- backend-network -->
+        <mxCell id="backend-net" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;dashed=1;dashPattern=8 4;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="460" y="60" width="440" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="backend-net-label" value="backend-network" style="text;html=1;align=right;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="745" y="68" width="140" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- web-server (frontend のみ) -->
+        <mxCell id="web-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="130" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="web-icon" value="🌐" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="205" y="135" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="web-title" value="web-server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="185" y="180" width="90" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="web-desc" value="Nginx (フロントエンド)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="158" y="205" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="web-net-badge" value="frontend のみ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="175" y="235" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- api-server (両方のネットワーク) -->
+        <mxCell id="api-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="310" y="350" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="api-icon" value="⚙" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="450" y="355" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="api-title" value="api-server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="435" y="400" width="85" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="api-desc" value="Node.js (API サーバー)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="410" y="425" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="api-net-badge-1" value="frontend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="395" y="455" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="api-net-badge-2" value="backend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="475" y="455" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="api-bridge-label" value="両方のネットワークに接続（ブリッジ役）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="485" width="260" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- db-server (backend のみ) -->
+        <mxCell id="db-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="130" width="260" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="db-icon" value="🗄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="705" y="135" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="db-title" value="db-server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="690" y="180" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="db-desc" value="PostgreSQL (データベース)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="650" y="205" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="db-net-badge" value="backend のみ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=1;fontSize=10;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="685" y="235" width="95" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: web → api -->
+        <mxCell id="arrow-web-api" value="通信可能 ✓" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;fontSize=11;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="285" as="sourcePoint" />
+            <mxPoint x="400" y="385" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: api → db -->
+        <mxCell id="arrow-api-db" value="通信可能 ✓" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;fontSize=11;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="385" as="sourcePoint" />
+            <mxPoint x="690" y="285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- web → db 通信不可 -->
+        <mxCell id="arrow-web-db-blocked" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#b85450;endFill=1;dashed=1;dashPattern=4 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365" y="200" as="sourcePoint" />
+            <mxPoint x="595" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="blocked-label" value="✗ 通信不可（異なるネットワーク）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="385" y="180" width="220" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

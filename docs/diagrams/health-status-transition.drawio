@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="health-status" name="コンテナヘルスステータス遷移">
+    <mxGraphModel dx="900" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="600" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="コンテナヘルスステータス遷移" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="290" y="20" width="320" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ起動 -->
+        <mxCell id="start" value="コンテナ起動" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="70" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: コンテナ起動 → starting -->
+        <mxCell id="arrow1" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#666666;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="120" as="sourcePoint" />
+            <mxPoint x="450" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label1" value="HEALTHCHECK 定義あり" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="135" width="150" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- starting -->
+        <mxCell id="starting" value="starting&#xa;（起動中、ヘルスチェック開始前）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="170" width="280" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: starting → healthy -->
+        <mxCell id="arrow2" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="230" as="sourcePoint" />
+            <mxPoint x="450" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label2" value="start-period 経過後&#xa;ヘルスチェック成功" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="245" width="150" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- healthy -->
+        <mxCell id="healthy" value="healthy&#xa;（ヘルスチェック成功）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="290" width="280" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: healthy → unhealthy -->
+        <mxCell id="arrow3" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#b85450;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="350" as="sourcePoint" />
+            <mxPoint x="450" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label3" value="ヘルスチェック連続失敗&#xa;（retries 回連続）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="365" width="160" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- unhealthy -->
+        <mxCell id="unhealthy" value="unhealthy&#xa;（ヘルスチェック失敗、retries回連続）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="410" width="280" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: unhealthy → healthy (回復) -->
+        <mxCell id="arrow-recover" value="ヘルスチェック成功で回復" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;curved=1;fontSize=10;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="0.2" relative="1" as="geometry">
+            <mxPoint x="305" y="440" as="sourcePoint" />
+            <mxPoint x="305" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="220" y="440" />
+              <mxPoint x="190" y="380" />
+              <mxPoint x="220" y="320" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- HEALTHCHECK パラメータ説明 -->
+        <mxCell id="params-box" value="HEALTHCHECK パラメータ&#xa;&#xa;--interval=30s    チェック間隔&#xa;--timeout=30s     タイムアウト&#xa;--start-period=0s 起動猶予期間&#xa;--retries=3       失敗許容回数" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=11;fontFamily=monospace;align=left;spacingLeft=10;spacingRight=10;" vertex="1" parent="1">
+          <mxGeometry x="640" y="170" width="230" height="120" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

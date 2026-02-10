@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="ideal-network-isolation" name="理想的なネットワーク分離">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="860" pageHeight="640" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="理想的なネットワーク分離" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="270" y="15" width="260" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- frontend-network 外枠 -->
+        <mxCell id="frontend-net" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=6;opacity=50;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="410" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend-label" value="frontend-network" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="55" y="78" width="140" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- backend-network 外枠 -->
+        <mxCell id="backend-net" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=6;opacity=50;" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="480" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="backend-label" value="backend-network" style="text;html=1;align=right;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="670" y="78" width="140" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: Web -->
+        <mxCell id="web" value="Web" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="170" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: API (両方のネットワークに接続) -->
+        <mxCell id="api" value="API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="170" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ: DB -->
+        <mxCell id="db" value="DB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="170" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 接続線: Web→API -->
+        <mxCell id="e1" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#82b366;strokeWidth=2;endFill=1;startFill=1;" edge="1" parent="1" source="web" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 接続線: API→DB -->
+        <mxCell id="e2" value="" style="endArrow=block;startArrow=block;html=1;strokeColor=#6c8ebf;strokeWidth=2;endFill=1;startFill=1;" edge="1" parent="1" source="api" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Web→DB のブロック線 (赤×) -->
+        <mxCell id="blocked" value="" style="endArrow=none;html=1;strokeColor=#b85450;strokeWidth=2;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="205" as="sourcePoint" />
+            <mxPoint x="620" y="205" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="120" />
+              <mxPoint x="550" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="blocked-x" value="X" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="415" y="100" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ラベル1 -->
+        <mxCell id="label1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="label1" value="Webは直接DBにアクセスできない" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="55" y="385" width="230" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label1-desc" value="フロントエンドとバックエンドを分離" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="405" width="230" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ラベル2 -->
+        <mxCell id="label2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="310" y="380" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="label2" value="APIのみがDBと通信可能" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="340" y="385" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label2-desc" value="最小権限の原則に基づくアクセス制御" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="320" y="405" width="250" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ラベル3 -->
+        <mxCell id="label3-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="570" y="380" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="label3" value="攻撃の横展開を防止" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="620" y="385" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label3-desc" value="侵害されても影響範囲を限定できる" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="585" y="405" width="240" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

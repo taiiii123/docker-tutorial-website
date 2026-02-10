@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="rolling-update-flow" name="ローリングアップデートの流れ">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="750" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="ローリングアップデートの流れ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="400" y="15" width="320" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Step 1 ===== -->
+        <mxCell id="step1-label" value="Step 1: 初期状態" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="140" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Step 1: Old ReplicaSet -->
+        <mxCell id="s1-old" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-old-label" value="Old ReplicaSet" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="50" y="103" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-v1a" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="55" y="130" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-v1b" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="125" y="130" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-v1c" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="195" y="130" width="60" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Step 1: New ReplicaSet (空) -->
+        <mxCell id="s1-new" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#82b366;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="190" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s1-new-label" value="New ReplicaSet（空）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=2;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="90" y="200" width="140" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Step 1 → Step 2 矢印 -->
+        <mxCell id="arrow12" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="290" y="160" as="sourcePoint" />
+            <mxPoint x="330" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Step 2 ===== -->
+        <mxCell id="step2-label" value="Step 2: 1つ目を入替" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="350" y="70" width="170" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2: Old ReplicaSet -->
+        <mxCell id="s2-old" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="100" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-old-label" value="Old ReplicaSet" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="340" y="103" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-v1a" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="365" y="130" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-v1b" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="435" y="130" width="60" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2: New ReplicaSet -->
+        <mxCell id="s2-new" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="330" y="190" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-new-label" value="New ReplicaSet" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="340" y="193" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s2-v2a" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="365" y="220" width="60" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2 → Step 3 矢印 -->
+        <mxCell id="arrow23" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="160" as="sourcePoint" />
+            <mxPoint x="620" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Step 3 ===== -->
+        <mxCell id="step3-label" value="Step 3: 2つ目を入替" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="640" y="70" width="170" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3: Old ReplicaSet -->
+        <mxCell id="s3-old" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="620" y="100" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-old-label" value="Old ReplicaSet" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="630" y="103" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-v1a" value="v1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="655" y="130" width="60" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3: New ReplicaSet -->
+        <mxCell id="s3-new" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="620" y="190" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-new-label" value="New ReplicaSet" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="630" y="193" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-v2a" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="655" y="220" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-v2b" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="725" y="220" width="60" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3 → Step 4 矢印 -->
+        <mxCell id="arrow34" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="870" y="160" as="sourcePoint" />
+            <mxPoint x="910" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Step 4 ===== -->
+        <mxCell id="step4-label" value="Step 4: 完了" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="940" y="70" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Step 4: Old ReplicaSet (空) -->
+        <mxCell id="s4-old" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="910" y="100" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-old-label" value="Old ReplicaSet（空）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="960" y="112" width="130" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Step 4: New ReplicaSet -->
+        <mxCell id="s4-new" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="910" y="165" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-new-label" value="New ReplicaSet" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="920" y="168" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-v2a" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="925" y="195" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-v2b" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="995" y="195" width="60" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="s4-v2c" value="v2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="195" width="60" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 説明文 -->
+        <mxCell id="explanation-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="1110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="explanation" value="ダウンタイムなしで段階的にアップデート。新しい Pod を起動してから古い Pod を停止する。&#10;maxSurge と maxUnavailable で同時に入れ替える Pod 数を制御できる。" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="230" y="307" width="620" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

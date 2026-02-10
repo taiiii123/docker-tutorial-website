@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="custom-network-subnet" name="カスタムネットワーク構造">
+    <mxGraphModel dx="900" dy="550" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="550" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="カスタムネットワーク構造" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="310" y="10" width="230" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- custom-network 外枠 -->
+        <mxCell id="network" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="100" y="50" width="660" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="network-label" value="custom-network" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="115" y="58" width="140" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="network-subnet" value="192.168.100.0/24" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#6c8ebf;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="260" y="60" width="140" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Gateway -->
+        <mxCell id="gateway" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-icon" value="🌐" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="345" y="100" width="35" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway-label" value="Gateway: 192.168.100.1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#9673a6;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="340" y="132" width="190" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- 接続線 gateway → Container A -->
+        <mxCell id="line-gw-a" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="165" as="sourcePoint" />
+            <mxPoint x="330" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- 接続線 gateway → Container B -->
+        <mxCell id="line-gw-b" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="165" as="sourcePoint" />
+            <mxPoint x="530" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Container A -->
+        <mxCell id="ca" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="235" width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-icon" value="📦" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="265" y="245" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-title" value="Container A" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="240" y="295" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-ip" value="192.168.100.2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#82b366;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="230" y="325" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-details" value="--ip 192.168.100.2 で指定" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="215" y="355" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-range" value="IP範囲: 192.168.100.2 &#x2013; 254" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#aaaaaa;" vertex="1" parent="1">
+          <mxGeometry x="200" y="380" width="200" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="ca-cmd" value="docker network create \\&#xa;  --subnet=192.168.100.0/24 \\&#xa;  --gateway=192.168.100.1 \\&#xa;  custom-network" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#82b366;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="165" y="395" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Container B -->
+        <mxCell id="cb" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="235" width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-icon" value="📦" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="565" y="245" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-title" value="Container B" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="540" y="295" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-ip" value="192.168.100.3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#d6b656;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="530" y="325" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-details" value="--ip 192.168.100.3 で指定" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="515" y="355" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="cb-cmd" value="docker run \\&#xa;  --network custom-network \\&#xa;  --ip 192.168.100.3 \\&#xa;  my-app" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#d6b656;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="475" y="395" width="210" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ間通信の双方向矢印 -->
+        <mxCell id="comm-arrow" value="通信可能" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=2;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=11;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="435" y="345" as="sourcePoint" />
+            <mxPoint x="445" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

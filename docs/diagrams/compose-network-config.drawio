@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Claude" version="24.0.0" type="device">
+  <diagram id="compose-network-config" name="Page-1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker Compose ネットワーク構成" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="284" y="10" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Host 外枠 -->
+        <mxCell id="docker-host" value="Docker Host" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=16;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=4;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="84" y="60" width="1000" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- ===== frontend-net (bridge) ===== -->
+        <mxCell id="frontend-net" value="frontend-net（bridge）" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;dashed=1;dashPattern=8 4;" vertex="1" parent="docker-host">
+          <mxGeometry x="40" y="60" width="560" height="280" as="geometry" />
+        </mxCell>
+
+        <!-- 外部アクセス可能ラベル -->
+        <mxCell id="frontend-label" value="🌐 外部アクセス可能" style="text;html=1;fontSize=11;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#4472C4;fontStyle=2;" vertex="1" parent="frontend-net">
+          <mxGeometry x="160" y="30" width="240" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- frontend (nginx) コンテナ -->
+        <mxCell id="container-frontend" value="frontend&#xa;(nginx)&#xa;:80" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;shadow=1;verticalAlign=middle;" vertex="1" parent="frontend-net">
+          <mxGeometry x="40" y="80" width="180" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- api (Node.js) コンテナ -->
+        <mxCell id="container-api" value="api&#xa;(Node.js)&#xa;:3000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;shadow=1;verticalAlign=middle;" vertex="1" parent="frontend-net">
+          <mxGeometry x="320" y="80" width="180" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- frontend → api 接続 -->
+        <mxCell id="conn-frontend-api" value="通信可能" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=1;fontSize=11;fontColor=#82b366;fontStyle=1;" edge="1" source="container-frontend" target="container-api" parent="frontend-net">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== backend-net (internal) ===== -->
+        <mxCell id="backend-net" value="backend-net（internal）" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;dashed=1;dashPattern=8 4;" vertex="1" parent="docker-host">
+          <mxGeometry x="360" y="400" width="580" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- 内部ネットワークラベル -->
+        <mxCell id="backend-label" value="🔒 内部ネットワーク（外部アクセス不可）" style="text;html=1;fontSize=11;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#BF8F00;fontStyle=2;" vertex="1" parent="backend-net">
+          <mxGeometry x="120" y="30" width="340" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- api (Node.js) コンテナ（backend-net 側の参照表示） -->
+        <mxCell id="container-api-backend" value="api&#xa;(Node.js)&#xa;:3000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;shadow=1;verticalAlign=middle;dashed=1;" vertex="1" parent="backend-net">
+          <mxGeometry x="40" y="70" width="180" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- db (Postgres) コンテナ -->
+        <mxCell id="container-db" value="db&#xa;(PostgreSQL)&#xa;:5432" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;shadow=1;verticalAlign=middle;" vertex="1" parent="backend-net">
+          <mxGeometry x="340" y="70" width="180" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- api → db 接続 -->
+        <mxCell id="conn-api-db" value="通信可能" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=1;fontSize=11;fontColor=#82b366;fontStyle=1;" edge="1" source="container-api-backend" target="container-db" parent="backend-net">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- api が両方のネットワークに接続していることを示す矢印 -->
+        <mxCell id="api-bridge" value="api は両方の&#xa;ネットワークに接続" style="endArrow=block;html=1;rounded=1;strokeWidth=2;strokeColor=#666666;dashed=1;dashPattern=6 3;endFill=1;fontSize=11;fontColor=#666666;fontStyle=2;curved=1;" edge="1" parent="docker-host">
+          <mxGeometry x="0.1" relative="1" as="geometry">
+            <mxPoint x="460" y="280" as="sourcePoint" />
+            <mxPoint x="460" y="470" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- frontend → db 通信不可 -->
+        <mxCell id="blocked-conn" value="❌ 通信不可" style="endArrow=block;html=1;rounded=1;strokeWidth=2;strokeColor=#FF0000;dashed=1;dashPattern=4 4;endFill=1;fontSize=12;fontColor=#FF0000;fontStyle=1;curved=1;" edge="1" parent="docker-host">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="280" as="sourcePoint" />
+            <mxPoint x="720" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 説明ボックス -->
+        <mxCell id="explanation" value="ポイント:&#xa;• frontend は frontend-net のみに接続&#xa;• api は frontend-net と backend-net の両方に接続&#xa;• db は backend-net のみに接続（外部から隔離）&#xa;• frontend から db への直接通信は不可能" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;arcSize=8;shadow=1;" vertex="1" parent="docker-host">
+          <mxGeometry x="40" y="400" width="280" height="130" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

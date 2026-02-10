@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="auto-build-triggers" name="自動ビルドのトリガー">
+    <mxGraphModel dx="1050" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1050" pageHeight="650" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="自動ビルドのトリガー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="380" y="15" width="240" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1 -->
+
+        <!-- Trigger 1: Push to Branch -->
+        <mxCell id="t1-trigger" value="Push to Branch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t1-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="120" as="sourcePoint" />
+            <mxPoint x="135" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t1-result" value="開発用ビルド&#xa;タグ: latest" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t1-example" value="例: main ブランチへの push" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="55" y="215" width="170" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Trigger 2: Pull Request -->
+        <mxCell id="t2-trigger" value="Pull Request&#xa;Created" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="70" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t2-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="345" y="120" as="sourcePoint" />
+            <mxPoint x="345" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t2-result" value="PR プレビュー&#xa;タグ: pr-123" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="160" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t2-example" value="例: PR 作成・更新時に自動実行" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="260" y="215" width="190" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Trigger 3: Tag (Release) -->
+        <mxCell id="t3-trigger" value="Tag (Release)&#xa;Created" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="70" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t3-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="120" as="sourcePoint" />
+            <mxPoint x="555" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t3-result" value="リリースビルド&#xa;タグ: v1.2.3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="160" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t3-example" value="例: git tag v1.2.3 で発火" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="485" y="215" width="160" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- 区切り線 -->
+        <mxCell id="separator" value="" style="endArrow=none;html=1;strokeWidth=1;strokeColor=#cccccc;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="260" as="sourcePoint" />
+            <mxPoint x="990" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Row 2 -->
+
+        <!-- Trigger 4: Schedule (Cron) -->
+        <mxCell id="t4-trigger" value="Schedule&#xa;（Cron）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="290" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t4-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="340" as="sourcePoint" />
+            <mxPoint x="135" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t4-result" value="定期ビルド&#xa;タグ: nightly" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="380" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t4-example" value="例: 毎日 0:00 UTC に実行" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="435" width="160" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Trigger 5: Dependency Update -->
+        <mxCell id="t5-trigger" value="Dependency&#xa;Update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="290" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t5-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="345" y="340" as="sourcePoint" />
+            <mxPoint x="345" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t5-result" value="依存更新ビルド&#xa;タグ: security" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="380" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t5-example" value="例: Dependabot による更新" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="265" y="435" width="170" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Trigger 6: Manual -->
+        <mxCell id="t6-trigger" value="Manual&#xa;Trigger" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="290" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t6-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#d6b656;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="555" y="340" as="sourcePoint" />
+            <mxPoint x="555" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t6-result" value="手動ビルド&#xa;タグ: adhoc" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="380" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t6-example" value="例: workflow_dispatch で手動実行" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="465" y="435" width="210" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- 全体矢印先（共通出力） -->
+        <mxCell id="registry-box" value="コンテナレジストリ&#xa;（Docker Hub / ECR / GHCR）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="210" width="250" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Row1 → registry -->
+        <mxCell id="r1-arrow" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#82b366;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="185" as="sourcePoint" />
+            <mxPoint x="720" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2-arrow" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#82b366;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="185" as="sourcePoint" />
+            <mxPoint x="720" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3-arrow" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#82b366;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="185" as="sourcePoint" />
+            <mxPoint x="720" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <!-- Row2 → registry -->
+        <mxCell id="r4-arrow" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#666666;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="405" as="sourcePoint" />
+            <mxPoint x="720" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r5-arrow" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#666666;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="405" as="sourcePoint" />
+            <mxPoint x="720" y="258" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r6-arrow" value="" style="endArrow=block;html=1;strokeWidth=1;strokeColor=#666666;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="405" as="sourcePoint" />
+            <mxPoint x="720" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="push-label" value="docker push" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#333333;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="730" y="180" width="100" height="18" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -19,31 +19,7 @@
 
 ## 状態遷移図
 
-```
-                    docker create
-                         │
-                         ▼
-                    ┌─────────┐
-                    │ created │
-                    └────┬────┘
-                         │ docker start
-                         ▼
-    docker restart  ┌─────────┐  docker pause
-         ┌─────────▶│ running │◀─────────┐
-         │          └────┬────┘          │
-         │               │               │
-         │     docker stop/kill     docker unpause
-         │               │               │
-         │               ▼               │
-         │          ┌─────────┐     ┌────────┐
-         └──────────│ exited  │     │ paused │
-                    └─────────┘     └────────┘
-                         │
-                    docker rm
-                         │
-                         ▼
-                    [削除済み]
-```
+![コンテナのライフサイクル（状態遷移図）](/images/diagrams/container-lifecycle.png)
 
 ## 各状態の詳細
 

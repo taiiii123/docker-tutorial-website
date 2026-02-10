@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Claude" version="24.0.0" type="device">
+  <diagram id="compose-operation" name="Page-1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker Compose の動作イメージ" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="284" y="10" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== 上部: docker-compose.yml ===== -->
+        <mxCell id="yml-container" value="docker-compose.yml" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="184" y="60" width="800" height="240" as="geometry" />
+        </mxCell>
+
+        <!-- services セクション -->
+        <mxCell id="services-box" value="services:" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;verticalAlign=top;spacingTop=8;arcSize=6;" vertex="1" parent="yml-container">
+          <mxGeometry x="30" y="50" width="450" height="185" as="geometry" />
+        </mxCell>
+
+        <mxCell id="svc-web" value="web:&#xa;  image: nginx:latest&#xa;  ports: 8080:80" style="text;html=1;fontSize=11;align=left;verticalAlign=top;fillColor=#f0f7ff;strokeColor=#6c8ebf;rounded=1;spacingLeft=8;spacingTop=4;whiteSpace=wrap;fontFamily=Courier New;" vertex="1" parent="services-box">
+          <mxGeometry x="15" y="35" width="130" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="svc-app" value="app:&#xa;  build: ./app&#xa;  depends_on: db" style="text;html=1;fontSize=11;align=left;verticalAlign=top;fillColor=#f0f7ff;strokeColor=#6c8ebf;rounded=1;spacingLeft=8;spacingTop=4;whiteSpace=wrap;fontFamily=Courier New;" vertex="1" parent="services-box">
+          <mxGeometry x="160" y="35" width="130" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="svc-db" value="db:&#xa;  image: mysql:8&#xa;  volumes:&#xa;    - db-data:/var" style="text;html=1;fontSize=11;align=left;verticalAlign=top;fillColor=#f0f7ff;strokeColor=#6c8ebf;rounded=1;spacingLeft=8;spacingTop=4;whiteSpace=wrap;fontFamily=Courier New;" vertex="1" parent="services-box">
+          <mxGeometry x="305" y="35" width="130" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- volumes セクション -->
+        <mxCell id="volumes-box" value="volumes:&#xa;  db-data:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=12;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;arcSize=10;fontFamily=Courier New;" vertex="1" parent="yml-container">
+          <mxGeometry x="510" y="50" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- networks セクション -->
+        <mxCell id="networks-box" value="networks:&#xa;  default:" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=12;fontStyle=0;align=left;verticalAlign=middle;spacingLeft=10;arcSize=10;fontFamily=Courier New;" vertex="1" parent="yml-container">
+          <mxGeometry x="510" y="140" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== 矢印: docker compose up ===== -->
+        <mxCell id="arrow-up" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=3;strokeColor=#333333;fillColor=#333333;endSize=12;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="584" y="310" as="sourcePoint" />
+            <mxPoint x="584" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow-label" value="docker compose up" style="edgeLabel;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#333333;fontFamily=Courier New;labelBackgroundColor=#FFFFFF;" vertex="1" connectable="0" parent="arrow-up">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== 下部: Docker Engine ===== -->
+        <mxCell id="engine-container" value="Docker Engine" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=16;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="184" y="410" width="800" height="370" as="geometry" />
+        </mxCell>
+
+        <!-- Default Network -->
+        <mxCell id="default-network" value="Default Network（bridge）" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;dashed=1;dashPattern=8 4;" vertex="1" parent="engine-container">
+          <mxGeometry x="30" y="50" width="530" height="290" as="geometry" />
+        </mxCell>
+
+        <!-- web コンテナ -->
+        <mxCell id="container-web" value="🌐 web&#xa;(nginx)&#xa;:80" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;shadow=1;verticalAlign=middle;" vertex="1" parent="default-network">
+          <mxGeometry x="30" y="60" width="140" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- app コンテナ -->
+        <mxCell id="container-app" value="⚙️ app&#xa;(Node.js)&#xa;:3000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;shadow=1;verticalAlign=middle;" vertex="1" parent="default-network">
+          <mxGeometry x="200" y="60" width="140" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- db コンテナ -->
+        <mxCell id="container-db" value="🗄️ db&#xa;(mysql)&#xa;:3306" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;shadow=1;verticalAlign=middle;" vertex="1" parent="default-network">
+          <mxGeometry x="370" y="60" width="140" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- コンテナ間の接続線 -->
+        <mxCell id="conn-web-app" value="" style="endArrow=block;startArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=1;startFill=1;" edge="1" source="container-web" target="container-app" parent="default-network">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="conn-app-db" value="" style="endArrow=block;startArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#82b366;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=1;startFill=1;" edge="1" source="container-app" target="container-db" parent="default-network">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ネットワーク内の説明 -->
+        <mxCell id="network-desc" value="コンテナはサービス名で相互に通信可能" style="text;html=1;fontSize=11;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#4472C4;fontStyle=2;" vertex="1" parent="default-network">
+          <mxGeometry x="80" y="200" width="370" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- db-data Volume -->
+        <mxCell id="volume-dbdata" value="📦 db-data&#xa;Volume" style="shape=cylinder3;whiteSpace=wrap;html=1;size=12;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="engine-container">
+          <mxGeometry x="620" y="80" width="140" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- db → Volume 接続線 -->
+        <mxCell id="conn-db-vol" value="マウント" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#d6b656;dashed=1;dashPattern=4 4;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=1;fontSize=11;fontColor=#d6b656;" edge="1" parent="engine-container">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="160" as="sourcePoint" />
+            <mxPoint x="620" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Volume 永続化の説明 -->
+        <mxCell id="vol-desc" value="データを永続化&#xa;（コンテナ削除後も保持）" style="text;html=1;fontSize=11;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#BF8F00;fontStyle=2;" vertex="1" parent="engine-container">
+          <mxGeometry x="600" y="200" width="180" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

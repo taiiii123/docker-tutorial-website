@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="docker-arch" name="Docker Architecture">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="600" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Docker Host 外枠 -->
+        <mxCell id="host" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="780" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="host-label" value="Docker Host" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="55" y="38" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Client -->
+        <mxCell id="client-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="70" y="80" width="180" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="client-title" value="Docker Client" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="100" y="90" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="client-cmds" value="docker run&#10;docker build&#10;docker pull&#10;docker push&#10;docker ps" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="95" y="125" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="client-desc" value="CLI / REST API" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#6c8ebf;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="105" y="240" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Client → Daemon -->
+        <mxCell id="arrow-cd" value="REST API" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;fontSize=11;fontColor=#2496ED;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="180" as="sourcePoint" />
+            <mxPoint x="340" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Docker Daemon -->
+        <mxCell id="daemon-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="440" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="daemon-title" value="Docker Daemon (dockerd)" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="365" y="88" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Images -->
+        <mxCell id="images" value="Images" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="125" width="140" height="50" as="geometry" />
+        </mxCell>
+        <!-- Containers -->
+        <mxCell id="containers" value="Containers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="125" width="140" height="50" as="geometry" />
+        </mxCell>
+        <!-- Networks -->
+        <mxCell id="networks" value="Networks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="195" width="140" height="50" as="geometry" />
+        </mxCell>
+        <!-- Volumes -->
+        <mxCell id="volumes" value="Volumes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="195" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- containerd -->
+        <mxCell id="containerd" value="containerd" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="270" width="140" height="35" as="geometry" />
+        </mxCell>
+        <!-- runc -->
+        <mxCell id="runc" value="runc (OCI Runtime)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="270" width="140" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 描画: Daemon → Registry -->
+        <mxCell id="arrow-reg" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="415" as="sourcePoint" />
+            <mxPoint x="570" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-reg-label" value="pull / push" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#2496ED;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="432" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Registry -->
+        <mxCell id="registry" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="440" y="475" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="reg-icon" value="☁" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;" vertex="1" parent="1">
+          <mxGeometry x="450" y="485" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="reg-title" value="Docker Hub / Registry" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="490" y="485" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="reg-desc" value="イメージの保存・配布" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="490" y="508" width="140" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

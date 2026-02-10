@@ -19,25 +19,7 @@
 
 ### イメージの種類
 
-```
-┌────────────────────────────────────────────────────┐
-│                   Docker Hub                        │
-├────────────────────┬───────────────────────────────┤
-│   Official Images  │    Verified Publisher         │
-│   (公式イメージ)    │    (認証済み公開者)            │
-│                    │                               │
-│   ✓ nginx          │    ✓ bitnami/nginx            │
-│   ✓ mysql          │    ✓ microsoft/dotnet         │
-│   ✓ redis          │    ✓ amazon/aws-cli           │
-│   ✓ node           │                               │
-├────────────────────┴───────────────────────────────┤
-│              Community Images                       │
-│              (コミュニティイメージ)                   │
-│                                                     │
-│              user/myapp                             │
-│              developer/tool                         │
-└────────────────────────────────────────────────────┘
-```
+![Docker Hub のイメージ分類](/images/diagrams/dockerhub-classification.png)
 
 ## イメージの検索
 
@@ -169,15 +151,7 @@ docker pull myusername/myapp:v1.0
 
 無料プランでは1つのプライベートリポジトリを作成できます。
 
-```
-┌─────────────────────────────────────┐
-│  Repository Settings                │
-├─────────────────────────────────────┤
-│  Visibility:                        │
-│    ○ Public  - 誰でもアクセス可能   │
-│    ● Private - 招待されたユーザーのみ │
-└─────────────────────────────────────┘
-```
+![リポジトリの公開設定](/images/diagrams/dockerhub-repository-visibility.png)
 
 ### タグの管理
 

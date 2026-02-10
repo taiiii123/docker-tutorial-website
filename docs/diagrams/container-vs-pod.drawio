@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="container-vs-pod" name="Container vs Pod概念対応">
+    <mxGraphModel dx="900" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="400" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Container vs Pod 概念対応" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="290" y="15" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Docker 側ラベル -->
+        <mxCell id="docker-side-label" value="Docker" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="150" y="65" width="70" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Container -->
+        <mxCell id="docker-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="260" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="docker-container-label" value="Docker Container" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="100" y="120" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="docker-container-type" value="単一コンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=0;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="130" y="155" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Container 内のアプリ -->
+        <mxCell id="docker-app" value="アプリケーション" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;strokeWidth=1;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="110" y="195" width="150" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="docker-desc" value="1コンテナ = 1プロセス" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="115" y="250" width="140" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 遷移矢印 -->
+        <mxCell id="arrow" value="" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="200" as="sourcePoint" />
+            <mxPoint x="480" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-label" value="Kubernetes では" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="365" y="170" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Kubernetes 側ラベル -->
+        <mxCell id="k8s-side-label" value="Kubernetes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="610" y="65" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Kubernetes Pod -->
+        <mxCell id="k8s-pod" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="510" y="100" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-pod-label" value="Kubernetes Pod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="585" y="110" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-pod-type" value="最小デプロイ単位" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=0;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="605" y="145" width="130" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Pod 内のコンテナ -->
+        <mxCell id="k8s-container" value="Container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="555" y="185" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-container2" value="(+サイドカー)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;dashed=1;fontSize=11;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="710" y="185" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="k8s-desc" value="1つ以上のコンテナをグループ化" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="570" y="255" width="210" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 補足 -->
+        <mxCell id="note" value="Docker の「コンテナ」が Kubernetes では「Pod」に対応する（Pod は1つ以上のコンテナを含む）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="140" y="340" width="620" height="25" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

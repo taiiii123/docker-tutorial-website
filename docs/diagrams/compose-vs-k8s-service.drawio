@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="compose-vs-k8s-service" name="Docker Compose vs Kubernetes Service">
+    <mxGraphModel dx="1100" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="550" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker Compose vs Kubernetes Service" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="280" y="15" width="430" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Compose 側ラベル -->
+        <mxCell id="compose-label" value="Docker Compose" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="130" y="65" width="150" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Compose: services -->
+        <mxCell id="compose-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="340" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="compose-file" value="docker-compose.yml" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="120" y="110" width="170" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- services: -->
+        <mxCell id="services-label" value="services:" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=0;fontColor=#6c8ebf;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="80" y="145" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- web: サービス -->
+        <mxCell id="compose-web" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="compose-web-label" value="web:" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="100" y="185" width="50" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="compose-web-detail" value="  image: nginx&#10;  ports:&#10;    - &quot;80:80&quot;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="110" y="215" width="130" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- api: サービス -->
+        <mxCell id="compose-api" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="compose-api-label" value="api:" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="100" y="325" width="50" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="compose-api-detail" value="  image: node:20&#10;  ports:&#10;    - &quot;3000:3000&quot;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="110" y="355" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 遷移矢印 -->
+        <mxCell id="arrow" value="" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="290" as="sourcePoint" />
+            <mxPoint x="510" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-label" value="対応" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="445" y="260" width="50" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Kubernetes 側ラベル -->
+        <mxCell id="k8s-label" value="Kubernetes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="730" y="65" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Kubernetes リソース -->
+        <mxCell id="k8s-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="540" y="100" width="490" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-file" value="Kubernetes マニフェスト" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="670" y="110" width="190" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- kind: Service -->
+        <mxCell id="k8s-service" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="150" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-service-label" value="kind: Service" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="590" y="155" width="130" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-service-detail" value="ネットワーク公開&#10;ロードバランシング&#10;サービスディスカバリ" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="590" y="190" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- kind: Deployment -->
+        <mxCell id="k8s-deployment" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="300" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-deployment-label" value="kind: Deployment" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="590" y="305" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-deployment-detail" value="Pod 管理&#10;レプリカ数制御&#10;ローリングアップデート" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="590" y="340" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- kind: ConfigMap -->
+        <mxCell id="k8s-configmap" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="150" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-configmap-label" value="kind: ConfigMap" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="830" y="155" width="150" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-configmap-detail" value="設定の外部化&#10;環境変数管理" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="830" y="190" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- kind: PersistentVolumeClaim -->
+        <mxCell id="k8s-pvc" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="270" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-pvc-label" value="kind: PVC" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="830" y="275" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-pvc-detail" value="永続ストレージ&#10;ボリューム要求" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="830" y="310" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 注釈 -->
+        <mxCell id="note" value="Compose の 1 サービスが K8s では複数リソースに分解される" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=2;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="605" y="440" width="380" height="25" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

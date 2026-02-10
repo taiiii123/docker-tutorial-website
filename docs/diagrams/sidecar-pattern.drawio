@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="sidecar-pattern" name="サイドカーパターン">
+    <mxGraphModel dx="900" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="600" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="サイドカーパターン" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="320" y="15" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Pod 外枠 -->
+        <mxCell id="pod-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="100" y="70" width="700" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="pod-label" value="Pod" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="120" y="80" width="50" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- nginx (メインコンテナ) -->
+        <mxCell id="main-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="150" y="130" width="260" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="main-label" value="nginx" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="240" y="150" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="main-type" value="メインコンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=0;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="215" y="180" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="main-desc" value="Webリクエストを処理&#10;ログを /var/log に書き込み" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="195" y="215" width="170" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- log-collector (サイドカーコンテナ) -->
+        <mxCell id="sidecar-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="490" y="130" width="260" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="sidecar-label" value="log-collector" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="555" y="150" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sidecar-type" value="サイドカーコンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=0;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="545" y="180" width="150" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="sidecar-desc" value="ログを読み取り&#10;外部サービスへ転送" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="555" y="215" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 共有ボリューム -->
+        <mxCell id="shared-volume" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="250" y="420" width="400" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-label" value="Shared Volume (logs)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="350" y="435" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="volume-path" value="/var/log" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="410" y="465" width="80" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- nginx → Shared Volume (write) -->
+        <mxCell id="write-arrow" value="書き込み (write)" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;fontSize=11;fontColor=#6c8ebf;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="310" as="sourcePoint" />
+            <mxPoint x="350" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Shared Volume → log-collector (read) -->
+        <mxCell id="read-arrow" value="読み取り (read)" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#6c8ebf;endFill=1;fontSize=11;fontColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="420" as="sourcePoint" />
+            <mxPoint x="620" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 外部サービスへの矢印 -->
+        <mxCell id="external-arrow" value="外部ログサービスへ転送" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#82b366;endFill=1;fontSize=11;fontColor=#82b366;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="220" as="sourcePoint" />
+            <mxPoint x="850" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

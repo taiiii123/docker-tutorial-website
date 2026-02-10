@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net" modified="2026-02-10T00:00:00.000Z" agent="draw.io" version="24.0.0" type="device">
+  <diagram id="docker-desktop-menu" name="Docker Desktop Menu">
+    <mxGraphModel dx="600" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="350" pageHeight="420" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- メニューバーアイコン部分 -->
+        <mxCell id="2" value="Docker Desktop" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontStyle=1;fontSize=13;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="220" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 接続線 -->
+        <mxCell id="3" value="" style="endArrow=none;html=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="70" as="sourcePoint" />
+            <mxPoint x="170" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ドロップダウンメニュー外枠 -->
+        <mxCell id="5" value="" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;arcSize=5;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="220" height="280" as="geometry" />
+        </mxCell>
+
+        <!-- メニュー項目: Dashboard -->
+        <mxCell id="10" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=12;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="70" y="100" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- セパレーター1 -->
+        <mxCell id="11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=0;spacingRight=0;points=[];portConstraint=eastwest;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="70" y="140" width="200" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- メニュー項目: Sign in / Sign up -->
+        <mxCell id="12" value="Sign in / Sign up" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;fontSize=12;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="70" y="155" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- セパレーター2 -->
+        <mxCell id="13" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=0;spacingRight=0;points=[];portConstraint=eastwest;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="70" y="195" width="200" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- メニュー項目: Pause -->
+        <mxCell id="14" value="Pause" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;fontSize=12;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="70" y="210" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- メニュー項目: Restart -->
+        <mxCell id="15" value="Restart" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffffff;stroke=#333333;fontSize=12;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="70" y="250" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- メニュー項目: Quit Docker Desktop -->
+        <mxCell id="16" value="Quit Docker Desktop" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffe6cc;stroke=#d6b656;fontSize=12;align=left;spacingLeft=15;" vertex="1" parent="1">
+          <mxGeometry x="70" y="295" width="200" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -20,7 +20,7 @@ import clsx from 'clsx'
  * React ノードからテキストを再帰的に抽出する
  * rehype-highlight によって children がオブジェクトになる問題に対応
  */
-function extractTextFromNode(node: ReactNode): string {
+export function extractTextFromNode(node: ReactNode): string {
   if (node === null || node === undefined) {
     return ''
   }
@@ -52,7 +52,7 @@ function extractTextFromNode(node: ReactNode): string {
  * URLパラメータの検証用パターン
  * 英小文字、数字、ハイフンのみを許可（パストラバーサル対策）
  */
-const VALID_ID_PATTERN = /^[a-z0-9-]+$/
+export const VALID_ID_PATTERN = /^[a-z0-9-]+$/
 
 export default function Section() {
   const { chapterId, sectionId } = useParams<{
@@ -342,6 +342,17 @@ export default function Section() {
                     </h3>
                   )
                 },
+                // 画像をブロック要素として適切にレンダリング
+                img({ src, alt, ...props }) {
+                  return (
+                    <img
+                      src={src}
+                      alt={alt || ''}
+                      loading="lazy"
+                      {...props}
+                    />
+                  )
+                },
               }}
             >
               {content}
@@ -378,6 +389,7 @@ export default function Section() {
               {nextSection ? (
                 <Link
                   to={`/chapter/${nextSection.chapterId}/${nextSection.sectionId}`}
+                  onClick={() => markAsCompleted(fullId)}
                   className="group flex items-center justify-center sm:justify-end gap-2 min-h-[44px] px-4 py-2 rounded-lg bg-docker-blue text-white hover:bg-blue-600 active:bg-blue-700 transition-colors touch-manipulation"
                 >
                   <span className="text-sm font-medium">次のセクション</span>
@@ -398,6 +410,7 @@ export default function Section() {
               ) : (
                 <Link
                   to={`/chapter/${chapter.id}`}
+                  onClick={() => markAsCompleted(fullId)}
                   className="group flex items-center justify-center sm:justify-end gap-2 min-h-[44px] px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 active:bg-green-800 transition-colors touch-manipulation"
                 >
                   <span className="text-sm font-medium">チャプター完了</span>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="resource-limit-risk" name="リソース制限がない場合のリスク">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="860" pageHeight="640" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="リソース制限がない場合のリスク" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="240" y="15" width="340" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 外枠 -->
+        <mxCell id="outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="65" width="780" height="540" as="geometry" />
+        </mxCell>
+
+        <!-- リスク1: リソース枯渇攻撃 -->
+        <mxCell id="r1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="85" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-num" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#b85450;strokeColor=#b85450;fontColor=#ffffff;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="110" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-title" value="リソース枯渇攻撃（DoS）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="145" y="103" width="210" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-arrow" value="" style="endArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="120" as="sourcePoint" />
+            <mxPoint x="410" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r1-desc" value="悪意のあるコンテナがすべてのリソースを消費" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="103" width="340" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-detail" value="攻撃者がコンテナ内で意図的にリソースを大量消費し、ホスト全体に影響" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="145" y="140" width="480" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- リスク2: 暴走プロセス -->
+        <mxCell id="r2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="205" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-num" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#b85450;strokeColor=#b85450;fontColor=#ffffff;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="230" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-title" value="暴走プロセス" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="145" y="223" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-arrow" value="" style="endArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="240" as="sourcePoint" />
+            <mxPoint x="320" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2-desc" value="メモリリークやCPUスパイクでホストが不安定に" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="223" width="350" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-detail" value="バグによるメモリリークがホスト全体のメモリを消費し、他のサービスに影響" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="145" y="260" width="500" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- リスク3: ノイジーネイバー問題 -->
+        <mxCell id="r3-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="325" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-num" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d6b656;strokeColor=#d6b656;fontColor=#ffffff;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="350" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-title" value="ノイジーネイバー問題" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="145" y="343" width="180" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-arrow" value="" style="endArrow=block;html=1;strokeColor=#d6b656;strokeWidth=2;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="360" as="sourcePoint" />
+            <mxPoint x="380" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3-desc" value="1つのコンテナが他のコンテナに影響" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="343" width="280" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-detail" value="リソースの公平な分配が保証されず、重要なサービスのパフォーマンスが低下" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="145" y="380" width="500" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- リスク4: OOM -->
+        <mxCell id="r4-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="445" width="720" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-num" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#b85450;strokeColor=#b85450;fontColor=#ffffff;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="470" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-title" value="OOM（Out Of Memory）" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="145" y="463" width="190" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-arrow" value="" style="endArrow=block;html=1;strokeColor=#b85450;strokeWidth=2;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="340" y="480" as="sourcePoint" />
+            <mxPoint x="390" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4-desc" value="システム全体のメモリ不足で重要なプロセスが停止" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="463" width="370" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-detail" value="OOM Killerが重要なプロセスを強制終了し、サービス全体がダウンする可能性" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="145" y="500" width="500" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

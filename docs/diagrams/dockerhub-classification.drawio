@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Claude" version="24.0.0" type="device">
+  <diagram id="dockerhub-classification" name="Page-1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker Hub のイメージ分類" style="text;html=1;fontSize=20;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;fillColor=none;strokeColor=none;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="284" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Docker Hub 外枠コンテナ -->
+        <mxCell id="dockerhub" value="Docker Hub" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#f5f5f5;strokeColor=#666666;fontSize=16;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="84" y="80" width="1000" height="680" as="geometry" />
+        </mxCell>
+
+        <!-- セクション1: 公式イメージ -->
+        <mxCell id="official-section" value="Official Images（公式イメージ）" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=8;" vertex="1" parent="dockerhub">
+          <mxGeometry x="30" y="60" width="940" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- 公式イメージの説明 -->
+        <mxCell id="official-desc" value="Docker 社が公式に管理・レビューしたイメージ" style="text;html=1;fontSize=11;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#4472C4;" vertex="1" parent="official-section">
+          <mxGeometry x="250" y="30" width="440" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- nginx -->
+        <mxCell id="official-nginx" value="✅ nginx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="official-section">
+          <mxGeometry x="60" y="70" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- mysql -->
+        <mxCell id="official-mysql" value="✅ mysql" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="official-section">
+          <mxGeometry x="260" y="70" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- redis -->
+        <mxCell id="official-redis" value="✅ redis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="official-section">
+          <mxGeometry x="460" y="70" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- node -->
+        <mxCell id="official-node" value="✅ node" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="official-section">
+          <mxGeometry x="660" y="70" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- セクション2: 認証済み公開者 -->
+        <mxCell id="verified-section" value="Verified Publisher（認証済み公開者）" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=8;" vertex="1" parent="dockerhub">
+          <mxGeometry x="30" y="260" width="940" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- 認証済みの説明 -->
+        <mxCell id="verified-desc" value="Docker 社が認証した企業・組織が公開するイメージ" style="text;html=1;fontSize=11;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#548235;" vertex="1" parent="verified-section">
+          <mxGeometry x="250" y="30" width="440" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- bitnami/nginx -->
+        <mxCell id="verified-bitnami" value="🏢 bitnami/nginx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="verified-section">
+          <mxGeometry x="60" y="70" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- microsoft/dotnet -->
+        <mxCell id="verified-microsoft" value="🏢 microsoft/dotnet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="verified-section">
+          <mxGeometry x="340" y="70" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- amazon/aws-cli -->
+        <mxCell id="verified-amazon" value="🏢 amazon/aws-cli" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="verified-section">
+          <mxGeometry x="620" y="70" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- セクション3: コミュニティイメージ -->
+        <mxCell id="community-section" value="Community Images（コミュニティイメージ）" style="rounded=1;whiteSpace=wrap;html=1;container=1;collapsible=0;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;verticalAlign=top;spacingTop=10;arcSize=8;" vertex="1" parent="dockerhub">
+          <mxGeometry x="30" y="460" width="940" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- コミュニティの説明 -->
+        <mxCell id="community-desc" value="一般ユーザーが作成・公開したイメージ（利用は自己責任）" style="text;html=1;fontSize=11;align=center;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#BF8F00;" vertex="1" parent="community-section">
+          <mxGeometry x="250" y="30" width="440" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- user/myapp -->
+        <mxCell id="community-myapp" value="👤 user/myapp" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="community-section">
+          <mxGeometry x="180" y="70" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- developer/tool -->
+        <mxCell id="community-tool" value="👤 developer/tool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=13;fontStyle=1;shadow=1;" vertex="1" parent="community-section">
+          <mxGeometry x="540" y="70" width="220" height="70" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

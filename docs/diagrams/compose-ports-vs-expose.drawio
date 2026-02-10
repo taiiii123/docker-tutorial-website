@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="compose-ports-vs-expose" name="ports vs expose 比較">
+    <mxGraphModel dx="900" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="600" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="ports と expose の違い" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="320" y="15" width="210" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ホストマシン外枠 -->
+        <mxCell id="host-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="820" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="host-label" value="ホストマシン" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="55" y="62" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Docker ネットワーク -->
+        <mxCell id="docker-net" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2496ED;strokeWidth=2;dashed=1;dashPattern=8 4;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="740" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="docker-net-label" value="Docker ネットワーク" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#2496ED;" vertex="1" parent="1">
+          <mxGeometry x="95" y="157" width="150" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 外部ユーザー -->
+        <mxCell id="external-user" value="外部ユーザー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="55" y="100" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="external-icon" value="👤" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="80" y="115" width="45" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: 外部 → web コンテナ (ports) -->
+        <mxCell id="arrow-ext-web" value="外部からアクセス可能" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#82b366;endFill=1;fontSize=11;fontColor=#82b366;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="135" as="sourcePoint" />
+            <mxPoint x="280" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- web コンテナ (ports: "80:80") -->
+        <mxCell id="web-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="130" y="200" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="web-icon" value="🌐" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="255" y="205" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="web-title" value="web コンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="225" y="250" width="110" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="web-ports" value="ports: &quot;80:80&quot;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#6c8ebf;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="220" y="280" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="web-access-label" value="ホスト:80 → コンテナ:80" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="205" y="305" width="150" height="20" as="geometry" />
+        </mxCell>
+        <!-- ポートマッピング表示 -->
+        <mxCell id="port-mapping-badge" value="✓ 外部公開" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="245" y="328" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: web → app (内部通信) -->
+        <mxCell id="arrow-web-app" value="内部通信のみ" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#2496ED;endFill=1;fontSize=11;fontColor=#2496ED;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="435" y="280" as="sourcePoint" />
+            <mxPoint x="500" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- app コンテナ (expose: 3000) -->
+        <mxCell id="app-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="505" y="200" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="app-icon" value="⚙" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="620" y="205" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="app-title" value="app コンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="598" y="250" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="app-expose" value="expose: &quot;3000&quot;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#82b366;fontStyle=1;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="595" y="280" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="app-access-label" value="Docker内部のみ通信可能" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="583" y="305" width="150" height="20" as="geometry" />
+        </mxCell>
+        <!-- 内部のみバッジ -->
+        <mxCell id="expose-badge" value="✗ 外部非公開" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1;fontSize=11;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="610" y="328" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 外部 → app 遮断表示 -->
+        <mxCell id="blocked-arrow" value="" style="endArrow=block;html=1;strokeWidth=2;strokeColor=#b85450;endFill=1;dashed=1;dashPattern=4 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="100" as="sourcePoint" />
+            <mxPoint x="700" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="blocked-label" value="✗ 外部からアクセス不可" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="710" y="100" width="160" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- 比較テーブル -->
+        <mxCell id="compare-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="400" width="655" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="compare-title" value="比較" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="140" y="405" width="45" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="compare-ports" value="ports: &quot;80:80&quot;  →  ホストのポート80をコンテナのポート80にマッピング&#xa;                     外部ネットワークからアクセス可能" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#6c8ebf;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="150" y="430" width="450" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="compare-expose" value="expose: &quot;3000&quot; →  コンテナのポート3000をDocker内部に公開&#xa;                     外部からはアクセスできない" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="150" y="470" width="450" height="35" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-10T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="image-container" name="Image to Container">
+    <mxGraphModel dx="880" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="880" pageHeight="460" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- イメージ（設計図） -->
+        <mxCell id="image-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="260" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="image-icon" value="📋" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=36;" vertex="1" parent="1">
+          <mxGeometry x="160" y="75" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="image-title" value="Docker イメージ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="115" y="140" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="image-desc" value="読み取り専用のテンプレート&#10;（設計図）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="105" y="175" width="170" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="image-items" value="・アプリコード&#10;・依存ライブラリ&#10;・設定ファイル&#10;・OS基盤" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="105" y="225" width="120" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印 -->
+        <mxCell id="arrow" value="" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#2496ED;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="200" as="sourcePoint" />
+            <mxPoint x="500" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-label" value="docker run" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;fontStyle=1;fontColor=#2496ED;" vertex="1" connectable="0" parent="arrow">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- コンテナ（実行中） -->
+        <mxCell id="container-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="60" width="260" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="container-icon" value="▶" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=36;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="615" y="75" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="container-title" value="Docker コンテナ" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="565" y="140" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="container-desc" value="実行中のインスタンス&#10;（書き込み可能）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="560" y="175" width="160" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="container-items" value="・プロセス実行中&#10;・ネットワーク接続&#10;・ファイル書き込み&#10;・独立した環境" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="555" y="225" width="130" height="80" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

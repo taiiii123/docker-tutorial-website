@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="hello-world-flow" name="docker run hello-world の実行フロー">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="900" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="docker run hello-world の実行フロー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="310" y="20" width="550" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- コマンドラベル -->
+        <mxCell id="cmd-label" value="$ docker run hello-world" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#333333;fontSize=14;fontStyle=1;fontColor=#00FF00;fontFamily=Courier New;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="405" y="70" width="360" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ステップ1: ローカルにイメージがあるか確認 -->
+        <mxCell id="step1" value="1. ローカルに hello-world&#xa;イメージがあるか確認" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="410" y="130" width="350" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: コマンド → ステップ1 -->
+        <mxCell id="arrow-cmd-1" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=2;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="585" y="105" as="sourcePoint" />
+            <mxPoint x="585" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 分岐ラベル: ある場合 -->
+        <mxCell id="label-yes" value="ある場合" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="760" y="255" width="80" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 分岐ラベル: ない場合 -->
+        <mxCell id="label-no" value="ない場合" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1;fontColor=#ED7D31;" vertex="1" parent="1">
+          <mxGeometry x="310" y="255" width="80" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ステップ2: Docker Hub からダウンロード -->
+        <mxCell id="step2" value="2. Docker Hub から&#xa;イメージをダウンロード" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="195" y="290" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ1（ない場合） → ステップ2 -->
+        <mxCell id="arrow-1-2" value="" style="endArrow=block;html=1;strokeColor=#ED7D31;strokeWidth=2;fillColor=#ED7D31;endFill=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="step1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="325" y="190" as="sourcePoint" />
+            <mxPoint x="325" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="325" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Docker Hub アイコン -->
+        <mxCell id="hub-icon" value="Docker Hub" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontSize=11;fontStyle=1;fontColor=#FFFFFF;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="95" y="305" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Hub → step2 -->
+        <mxCell id="arrow-hub" value="" style="endArrow=block;html=1;strokeColor=#0050ef;strokeWidth=1;fillColor=#0050ef;endFill=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="325" as="sourcePoint" />
+            <mxPoint x="195" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ3: イメージからコンテナを作成 -->
+        <mxCell id="step3" value="3. イメージからコンテナを作成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="430" y="420" width="310" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ2 → ステップ3 -->
+        <mxCell id="arrow-2-3" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=2;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="455" y="325" as="sourcePoint" />
+            <mxPoint x="585" y="325" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="585" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: merge point → ステップ3 -->
+        <mxCell id="arrow-merge-3" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=2;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="585" y="325" as="sourcePoint" />
+            <mxPoint x="585" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 矢印: ステップ1（ある場合）→ merge point -->
+        <mxCell id="arrow-1-merge" value="" style="endArrow=block;html=1;strokeColor=#82b366;strokeWidth=2;fillColor=#82b366;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="step1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="190" as="sourcePoint" />
+            <mxPoint x="585" y="420" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="190" />
+              <mxPoint x="800" y="390" />
+              <mxPoint x="585" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ4: プログラムを実行 -->
+        <mxCell id="step4" value="4. コンテナ内のプログラムを実行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="430" y="530" width="310" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ3 → ステップ4 -->
+        <mxCell id="arrow-3-4" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=2;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="585" y="480" as="sourcePoint" />
+            <mxPoint x="585" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 出力テキスト -->
+        <mxCell id="output" value="Hello from Docker!&#xa;This message shows that..." style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#999999;fillColor=#f5f5f5;fontSize=11;fontColor=#333333;fontFamily=Courier New;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="538" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: step4 → output -->
+        <mxCell id="arrow-output" value="" style="endArrow=open;html=1;strokeColor=#999999;strokeWidth=1;dashed=1;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="740" y="560" as="sourcePoint" />
+            <mxPoint x="760" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ5: コンテナは停止 -->
+        <mxCell id="step5" value="5. 実行完了後、コンテナは停止" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1;fontColor=#333333;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="430" y="640" width="310" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: ステップ4 → ステップ5 -->
+        <mxCell id="arrow-4-5" value="" style="endArrow=block;html=1;strokeColor=#4472C4;strokeWidth=2;fillColor=#4472C4;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="585" y="590" as="sourcePoint" />
+            <mxPoint x="585" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 停止ステータス -->
+        <mxCell id="status" value="Status: Exited (0)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#b85450;fontStyle=2;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="500" y="710" width="170" height="25" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

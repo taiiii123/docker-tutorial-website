@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="docker-k8s-workflow" name="Docker と Kubernetes の関係">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="600" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Docker と Kubernetes の関係" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="400" y="15" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 開発者のワークフロー 外枠 -->
+        <mxCell id="workflow-outer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="65" width="1100" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="workflow-label" value="開発者のワークフロー" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="55" y="73" width="190" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ステップ1: Dockerfile -->
+        <mxCell id="step1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="140" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="step1-icon" value="📄" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=36;" vertex="1" parent="1">
+          <mxGeometry x="145" y="155" width="60" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step1-title" value="Dockerfile" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="125" y="215" width="100" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="step1-desc" value="アプリケーションの&#10;ビルド手順を定義" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="115" y="245" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="step1-num" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="150" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Dockerfile → docker build -->
+        <mxCell id="arrow1" value="" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#333333;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="285" y="240" as="sourcePoint" />
+            <mxPoint x="340" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ2: docker build -->
+        <mxCell id="step2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="345" y="140" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="step2-icon" value="🔨" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=36;" vertex="1" parent="1">
+          <mxGeometry x="410" y="155" width="60" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step2-title" value="docker build" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#333333;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="385" y="215" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="step2-desc" value="Dockerfileから&#10;イメージをビルド" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="390" y="245" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="step2-num" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#82b366;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="355" y="150" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: docker build → Registry -->
+        <mxCell id="arrow2" value="docker push" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#333333;endFill=1;fontSize=11;fontStyle=1;fontColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="240" as="sourcePoint" />
+            <mxPoint x="620" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ3: Container Registry -->
+        <mxCell id="step3-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="625" y="140" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="step3-icon" value="☁" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=36;" vertex="1" parent="1">
+          <mxGeometry x="695" y="155" width="50" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="step3-title" value="Container Registry" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="655" y="215" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="step3-desc" value="Docker Hub 等&#10;イメージの保管・配布" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="660" y="245" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="step3-num" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d6b656;strokeColor=#d6b656;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="150" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 矢印: Registry → Kubernetes -->
+        <mxCell id="arrow3" value="docker pull" style="endArrow=block;html=1;strokeWidth=3;strokeColor=#333333;endFill=1;fontSize=11;fontStyle=1;fontColor=#333333;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="240" as="sourcePoint" />
+            <mxPoint x="880" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ステップ4: Kubernetes クラスター -->
+        <mxCell id="step4-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="885" y="120" width="220" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="step4-icon" value="⎈" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=36;" vertex="1" parent="1">
+          <mxGeometry x="965" y="130" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="step4-title" value="Kubernetes&#10;クラスター" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="935" y="180" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="step4-num" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#6c8ebf;strokeColor=#6c8ebf;fontColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="895" y="130" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- K8s内のPod表示 -->
+        <mxCell id="k8s-pod1" value="Pod" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="905" y="240" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-pod2" value="Pod" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="240" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-pod3" value="Pod" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="905" y="290" width="80" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-pod4" value="Pod" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="290" width="80" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step4-desc" value="K8s がイメージをプルして&#10;コンテナを実行・管理" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="910" y="340" width="170" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 下部の説明 -->
+        <mxCell id="docker-scope" value="Docker の領域" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="250" y="400" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="docker-scope-line" value="" style="endArrow=none;html=1;strokeWidth=3;strokeColor=#82b366;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="390" as="sourcePoint" />
+            <mxPoint x="545" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="k8s-scope" value="Kubernetes の領域" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="890" y="440" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-scope-line" value="" style="endArrow=none;html=1;strokeWidth=3;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="885" y="435" as="sourcePoint" />
+            <mxPoint x="1105" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

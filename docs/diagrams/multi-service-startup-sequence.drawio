@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net" modified="2026-02-10T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram id="multi-service-startup-sequence" name="複数サービス起動シーケンス">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- 全体タイトル -->
+        <mxCell id="titleBox" value="&lt;b&gt;起動シーケンス&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=16;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== ステージ1: db起動 ===== -->
+        <mxCell id="stage1Label" value="&lt;b&gt;1. db起動&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="db1" value="起動" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="85" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="db2" value="PostgreSQL初期化&#xa;(30秒)" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffe6cc;stroke=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="270" y="85" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="db3" value="pg_isready チェック&#xa;(10秒ごと)" style="rounded=1;whiteSpace=wrap;html=1;fill=#f5f5f5;stroke=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="85" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="db4" value="healthy ✓" style="rounded=1;whiteSpace=wrap;html=1;fill=#d5e8d4;stroke=#82b366;fontSize=12;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="85" width="100" height="40" as="geometry" />
+        </mxCell>
+        <!-- db 矢印 -->
+        <mxCell id="dbA1" value="" style="endArrow=classic;html=1;strokeColor=#999999;" edge="1" parent="1" source="db1" target="db2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dbA2" value="" style="endArrow=classic;html=1;strokeColor=#999999;" edge="1" parent="1" source="db2" target="db3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dbA3" value="" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="db3" target="db4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 区切り線1 -->
+        <mxCell id="sep1" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;strokeColor=#CCCCCC;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="145" width="720" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- db healthy → app起動 トリガー矢印 -->
+        <mxCell id="trigger1" value="dbがhealthyになった後" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=2;dashed=1;fontSize=10;fontColor=#82b366;" edge="1" parent="1">
+          <mxGeometry x="0.1" relative="1" as="geometry">
+            <mxPoint x="690" y="130" as="sourcePoint" />
+            <mxPoint x="160" y="200" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== ステージ2: app起動 ===== -->
+        <mxCell id="stage2Label" value="&lt;b&gt;2. app起動&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="app1" value="起動" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="195" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="app2" value="DB接続・初期化&#xa;(40秒)" style="rounded=1;whiteSpace=wrap;html=1;fill=#ffe6cc;stroke=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="270" y="195" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="app3" value="/health チェック&#xa;(30秒ごと)" style="rounded=1;whiteSpace=wrap;html=1;fill=#f5f5f5;stroke=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="195" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="app4" value="healthy ✓" style="rounded=1;whiteSpace=wrap;html=1;fill=#d5e8d4;stroke=#82b366;fontSize=12;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="195" width="100" height="40" as="geometry" />
+        </mxCell>
+        <!-- app 矢印 -->
+        <mxCell id="appA1" value="" style="endArrow=classic;html=1;strokeColor=#999999;" edge="1" parent="1" source="app1" target="app2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="appA2" value="" style="endArrow=classic;html=1;strokeColor=#999999;" edge="1" parent="1" source="app2" target="app3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="appA3" value="" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="app3" target="app4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 区切り線2 -->
+        <mxCell id="sep2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;strokeColor=#CCCCCC;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="255" width="720" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- app healthy → nginx起動 トリガー矢印 -->
+        <mxCell id="trigger2" value="appがhealthyになった後" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=2;dashed=1;fontSize=10;fontColor=#82b366;" edge="1" parent="1">
+          <mxGeometry x="0.1" relative="1" as="geometry">
+            <mxPoint x="690" y="240" as="sourcePoint" />
+            <mxPoint x="160" y="310" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== ステージ3: nginx起動 ===== -->
+        <mxCell id="stage3Label" value="&lt;b&gt;3. nginx起動&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nginx1" value="起動" style="rounded=1;whiteSpace=wrap;html=1;fill=#dae8fc;stroke=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="305" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nginx2" value="設定読み込み" style="rounded=1;whiteSpace=wrap;html=1;fill=#f5f5f5;stroke=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="270" y="305" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nginx3" value="リクエスト受付開始&#xa;✓ 完了!" style="rounded=1;whiteSpace=wrap;html=1;fill=#d5e8d4;stroke=#82b366;fontSize=12;fontStyle=1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="450" y="305" width="160" height="40" as="geometry" />
+        </mxCell>
+        <!-- nginx 矢印 -->
+        <mxCell id="nginxA1" value="" style="endArrow=classic;html=1;strokeColor=#999999;" edge="1" parent="1" source="nginx1" target="nginx2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nginxA2" value="" style="endArrow=classic;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="nginx2" target="nginx3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

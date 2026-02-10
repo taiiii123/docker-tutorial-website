@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-02-09T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="union-fs" name="Union File System">
+    <mxGraphModel dx="700" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="700" pageHeight="450" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Union File System（レイヤー構造）" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="170" y="15" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Container Layer（書き込み可能） -->
+        <mxCell id="layer-container" value="Container Layer（コンテナレイヤー）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;fontSize=14;fontStyle=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="120" y="60" width="400" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rw" value="✏ 書き込み可能" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="72" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Application Layer -->
+        <mxCell id="layer-app" value="Application Layer（アプリケーション）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="125" width="400" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="label-ro1" value="🔒 読み取り専用" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="137" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Dependencies Layer -->
+        <mxCell id="layer-deps" value="Dependencies Layer（依存ライブラリ）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="190" width="400" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="label-ro2" value="🔒 読み取り専用" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="202" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Base Image Layer -->
+        <mxCell id="layer-base" value="Base Image（ベースイメージ: Alpine, Ubuntu等）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="255" width="400" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="label-ro3" value="🔒 読み取り専用" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="267" width="120" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- 括弧: イメージレイヤー -->
+        <mxCell id="brace-image" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;size=0.5;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="85" y="125" width="25" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="brace-label" value="イメージ&#10;レイヤー" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="15" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 説明 -->
+        <mxCell id="note" value="各レイヤーは差分のみを保持し、&#10;ストレージを効率的に使用する" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#888888;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="195" y="325" width="210" height="40" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
